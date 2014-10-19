@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+	<configuration id="report" name="" enable="">
+		<description>ddd</description>
+		<!-- view系 -->
+		<viewer>
+			<queryCondition type="" name="" mapping=""></queryCondition>
+			<queryCondition type="" name="" mapping=""></queryCondition>
+			<queryCondition type="" name="" mapping=""></queryCondition>
+			<!-- 合计 -->
+			<sumColumns>a,b</sumColumns>
+			<max>20</max>
+		</viewer>
+		<!-- 创建table系 -->
+		<createTabler>
+			<tableName></tableName>
+			<columns>
+				<column type="" name="" mapping=""></column>
+				<column type="" name="" mapping=""></column>
+			</columns>
+		</createTabler>
+		<!-- 抓取data系 -->
+		<catchDataer>
+			<authUrl></authUrl>
+			<authUsername></authUsername>
+			<authPassword></authPassword>
+			<downFileUrl></downFileUrl>
+		</catchDataer>
+		<!-- A3插件系 -->
+		<a3Pluginer>
+			<funcId></funcId>
+			<url></url>
+		</a3Pluginer>
+	</configuration>
+</configurations>

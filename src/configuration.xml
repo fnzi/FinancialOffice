@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+	<configuration id="MerchantSettleReport" name="商户结算日报"
+		enable="true">
+		<description>商户结算日报</description>
+		<!-- view系 -->
+		<viewer>
+			<queryCondition type="date" name="结算日期" mapping="settle_date"></queryCondition>
+			<queryCondition type="text" name="商户名称" mapping="merchant_name"></queryCondition>
+			<!-- 合计 -->
+			<sumColumns>trade_amount,merchant_settle_amount,discount_earnings,consume_fee,settle_fee
+			</sumColumns>
+			<max>20</max>
+		</viewer>
+		<!-- 创建table系 -->
+		<createTabler>
+			<tableName>MerchantSettleReport</tableName>
+			<columns>
+				<column name="序号" mapping="number"></column>
+				<column name="结算日期" mapping="settle_date"></column>
+				<column name="商户编号" mapping="merchant_no"></column>
+				<column name="商户名称" mapping="merchant_name"></column>
+				<column name="交易金额" mapping="trade_amount" type="amount"></column>
+				<column name="商户结算金额" mapping="merchant_settle_amount"></column>
+				<column name="折扣收益" mapping="discount_earnings"></column>
+				<column name="消费手续费" mapping="consume_fee"></column>
+				<column name="结算手续费" mapping="settle_fee"></column>
+				<column name="卡类型" mapping="card_type"></column>
+				<column name="结算方式" mapping="settle_type"></column>
+			</columns>
+		</createTabler>
+		<!-- 抓取data系 -->
+		<catchDataer>
+			<authUrl>1</authUrl>
+			<authUsername>2</authUsername>
+			<authPassword>3</authPassword>
+			<downFileUrl>4</downFileUrl>
+			<!-- 数据有效行 -->
+			<datarow>7</datarow>
+			<!-- 数据有效列 -->
+			<datacol>8</datacol>
+		</catchDataer>
+		<!-- A3插件系 -->
+		<a3Pluginer>
+			<funcId>5</funcId>
+			<url>6</url>
+		</a3Pluginer>
+	</configuration>
+</configurations>

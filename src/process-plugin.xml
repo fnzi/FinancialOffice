@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+	<plugin id="createTableHandler"
+		class="cn.tj.ykt.financialoffice.handler.impl.CreateTableHandler">
+		<description>创建/检查table</description>
+	</plugin>
+	<plugin id="accessAuthHandler" class="cn.tj.ykt.financialoffice.handler.impl.AccessAuthHandler">
+		<description>验证获取登录权限</description>
+	</plugin>
+	<plugin id="catchDateHandler" class="cn.tj.ykt.financialoffice.handler.impl.CatchDateHandler">
+		<description>抓取Excel文件，备份Excel文件</description>
+	</plugin>
+	<plugin id="analyticalDataHandler"
+		class="cn.tj.ykt.financialoffice.handler.impl.AnalyticalDataHandler">
+		<description>解析获取Excel中data</description>
+	</plugin>
+	<plugin id="persistentDataHandler"
+		class="cn.tj.ykt.financialoffice.handler.impl.PersistentDataHandler">
+		<description>持久化data到DB</description>
+	</plugin>
+</plugins>

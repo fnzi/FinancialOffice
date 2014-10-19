@@ -1,0 +1,52 @@
+package cn.tj.ykt.financialoffice.fw.helper;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+
+import cn.tj.ykt.financialoffice.fw.util.Base64Util;
+
+public class PropertyConfigurer extends PropertyPlaceholderConfigurer {
+
+    /** 需要解密处理的属性 */
+    private String keyWord = ".enc";
+
+    protected void processProperties(ConfigurableListableBeanFactory beanFactory, Properties props) throws BeansException {
+
+        Map<String, String> deal = new HashMap<String, String>();
+
+        for (Object key : props.keySet()) {
+            String property = key.toString();
+            if (property.endsWith(keyWord)) {
+                String var = props.getProperty(property);
+                if (var != null) {
+                    String strDes = Base64Util.dec(var);
+                    props.setProperty(property, strDes);
+
+                    deal.put(replaceEnc(property), strDes);
+                }
+            }
+        }
+
+        for (String key : deal.keySet()) {
+            props.put(key, deal.get(key));
+        }
+
+        super.processProperties(beanFactory, props);
+    }
+
+    protected String resolvePlaceholder(String placeholder, Properties props) {
+        String prop = null;
+        prop = props.getProperty(placeholder);
+        return prop;
+    }
+
+    private String replaceEnc(String property) {
+        property = property.replace(keyWord, "");
+        return property;
+    }
+}

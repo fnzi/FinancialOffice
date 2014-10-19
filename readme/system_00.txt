@@ -1,0 +1,110 @@
+
+0.项目请使用utf-8
+
+1.report view:
+
+url:
+http://127.0.0.1:8080/FinancialOffice/doJsp/reportViewService.action
+
+service class:
+ReportViewService
+
+jsp:
+reportView.jsp
+
+2.注意：
+输出log请使用
+cn.tj.ykt.financialoffice.fw.helper.LogUtil类
+
+3.获取配置信息：
+
+ConfigurationContext持有所有配置信息
+
+目前仅支持xml配置
+获取实例的方法：ConfigurationContext context = XmlContext.getContext();
+
+3.1view系的代码读取已完成。
+获取方法：
+ConfigurationContext context = XmlContext.getContext();
+Viewer viewer = context.getViewer("report");
+
+其他配置解析，正在开发中。
+
+4.进行单元验证的时候，继承BaseTest，就可以获取到spring环境。
+获取spring环境的方式为：
+SpringUtil.getApplicationContext();
+SpringUtil.getBean("...");
+
+5.报表传输使用定时任务的方式执行，同时支持http请求方式。
+定时任务：TransmitReportTask
+http请求：/doReport/{reportid}
+
+http请求作为手工执行的补充处理。
+
+**********************************************************************
+6.关于数据库查询
+
+GenericDao接口中共有三种方式操作数据库。
+1.hql
+2.sql
+3.hibernate的crud
+4.Criteria
+
+example:
+
+原生sql查询方式
+        GenericDao dao = (GenericDao) SpringUtil.getBean("genericDao");
+
+        List<Object[]> l = (List<Object[]>) dao.getListBySQL("select * from sys_user");
+        for (Object o : l.get(0)) {
+            System.out.println(o);
+        }
+
+原生sql相关的方法有：
+executeSql()           更新类sql
+getBySQL()             单值查询方式
+getListBySQL()         集合查询方式
+
+获取到dao的方式：
+1.SpringUtil.getBean("genericDao")
+2.ViewService的子类中可以直接   getDao()获取
+**********************************************************************
+
+7.关于数据库表命名规则：
+
+系统表，使用[sys_]开头
+报表表，使用[tab_]开头----------------???????????
+收付款相关表，使用[pay_]开头
+
+8.关于系统异常处理：
+
+系统共涉及四个exception
+DaoException..............描述数据相关的异常
+GenericException..........系统业务异常基类
+ServiceException..........描述系统逻辑业务的异常
+SystemException...........描述系统底层的异常
+
+example：
+******************************************************
+1.
+        String name = getParam(param, "username");
+        String pwd = getParam(param, "password");
+
+        if (pwd == null || pwd.equals("")) {
+            throw new ServiceException("密码不能为空");
+        }
+2.
+        File f = new File("");
+        try {
+            f.getCanonicalPath();
+        } catch (IOException e) {
+            throw new SystemException(e.getMessage(), e);
+        }
+******************************************************
+
+9.报表请求服务
+http://127.0.0.1:8080/FinancialOffice/doReport/MerchantSettleReport
+
+
+
+

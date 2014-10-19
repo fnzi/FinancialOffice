@@ -1,0 +1,19 @@
+1.配置文件中
+
+enable
+
+true ：有效
+false：无效
+
+**********viewer***************
+1. queryCondition => type说明
+date：日期
+text：文本框
+
+**********viewer***************
+
+**********createTabler***************
+1.column => type说明
+amount：千分符
+
+**********createTabler***************

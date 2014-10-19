@@ -1,0 +1,21 @@
+.btn{width:60px;height:25px;cursor: pointer;border-width:0px;background-image: url(images/btn-bg2.gif);letter-spacing: 3px;}
+.page_and_btn {width:99%;height:auto;overflow:hidden;padding:10px 0px 0px 0px;}
+.page_and_btn ul { margin:0px;list-style:none;float:right;width:auto;overflow:hidden;padding:0px;}
+
+/* set pageButton border color*/
+
+.page_and_btn ul li { float:left; border:1px solid #C1DAD7; height:20px; line-height:20px; margin:0px 2px;}
+.page_and_btn ul li a{color:#333; text-decoration:none;}
+
+/* set pageButton background-color*/
+
+.page_and_btn ul li a, .pageinfo { cursor: pointer;display:block; padding:0px 6px; background:#f5fafa;}
+.page_and_btn  { color:#555;}
+.current {  cursor: pointer;background:#ccced4; display:block; padding:0px 6px; font-weight:bold;}
+.page_and_btn div{float:left;}
+
+.input_txt {
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+}

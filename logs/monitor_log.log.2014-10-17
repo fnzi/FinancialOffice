@@ -1,0 +1,62 @@
+2014/10/17 10:41:23.797 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/17 10:41:23.985 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/17 10:41:23.985 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/17 10:41:23.985 INFO HHH000206: hibernate.properties not found
+2014/10/17 10:41:23.985 INFO HHH000021: Bytecode provider name : javassist
+2014/10/17 10:41:24.578 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/17 10:41:24.609 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/17 10:41:24.625 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/17 10:41:24.672 INFO HHH000228: Running hbm2ddl schema update
+2014/10/17 10:41:24.672 INFO HHH000102: Fetching database metadata
+2014/10/17 10:41:24.687 INFO HHH000396: Updating schema
+2014/10/17 10:41:24.687 INFO HHH000232: Schema update complete
+2014/10/17 10:41:25.047 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/17 10:41:25.047 INFO Stopping Prototyper thread
+2014/10/17 10:41:25.047 INFO Stopping HouseKeeper thread
+2014/10/17 10:41:42.446 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/17 10:41:42.633 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/17 10:41:42.633 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/17 10:41:42.633 INFO HHH000206: hibernate.properties not found
+2014/10/17 10:41:42.633 INFO HHH000021: Bytecode provider name : javassist
+2014/10/17 10:41:43.226 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/17 10:41:43.258 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/17 10:41:43.258 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/17 10:41:43.305 INFO HHH000228: Running hbm2ddl schema update
+2014/10/17 10:41:43.305 INFO HHH000102: Fetching database metadata
+2014/10/17 10:41:43.321 INFO HHH000396: Updating schema
+2014/10/17 10:41:43.321 INFO HHH000232: Schema update complete
+2014/10/17 10:41:43.679 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/17 10:41:43.679 INFO Stopping Prototyper thread
+2014/10/17 10:41:43.679 INFO Stopping HouseKeeper thread
+2014/10/17 10:41:56.862 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/17 10:41:57.034 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/17 10:41:57.050 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/17 10:41:57.050 INFO HHH000206: hibernate.properties not found
+2014/10/17 10:41:57.050 INFO HHH000021: Bytecode provider name : javassist
+2014/10/17 10:41:57.627 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/17 10:41:57.659 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/17 10:41:57.675 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/17 10:41:57.721 INFO HHH000228: Running hbm2ddl schema update
+2014/10/17 10:41:57.721 INFO HHH000102: Fetching database metadata
+2014/10/17 10:41:57.737 INFO HHH000396: Updating schema
+2014/10/17 10:41:57.737 INFO HHH000232: Schema update complete
+2014/10/17 10:41:58.174 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/17 10:41:58.189 INFO Stopping Prototyper thread
+2014/10/17 10:41:58.189 INFO Stopping HouseKeeper thread
+2014/10/17 10:42:25.553 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/17 10:42:25.725 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/17 10:42:25.725 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/17 10:42:25.725 INFO HHH000206: hibernate.properties not found
+2014/10/17 10:42:25.740 INFO HHH000021: Bytecode provider name : javassist
+2014/10/17 10:42:26.317 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/17 10:42:26.350 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/17 10:42:26.365 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/17 10:42:26.412 INFO HHH000228: Running hbm2ddl schema update
+2014/10/17 10:42:26.412 INFO HHH000102: Fetching database metadata
+2014/10/17 10:42:26.428 INFO HHH000396: Updating schema
+2014/10/17 10:42:26.428 INFO HHH000232: Schema update complete
+2014/10/17 10:42:26.771 WARN SQL Error: 1064, SQLState: 42000
+2014/10/17 10:42:26.771 ERROR You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchars(255) default NULL,b varchar(255) default NULL)' at line 1
+2014/10/17 10:42:26.818 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/17 10:42:26.818 INFO Stopping Prototyper thread
+2014/10/17 10:42:26.818 INFO Stopping HouseKeeper thread

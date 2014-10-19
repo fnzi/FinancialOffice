@@ -1,0 +1,850 @@
+2014/10/19 11:05:47.609 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:05:47.859 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:05:47.859 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:05:47.859 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:05:47.859 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:07:46.499 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:07:46.499 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@15575e0] to prepare test instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:105)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:74)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:312)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'dataSource' defined in class path resource [applicationContext.xml]: Could not resolve placeholder 'jdbc.username' in string value "${jdbc.username}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:209)
+	at org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.processProperties(PropertyPlaceholderConfigurer.java:220)
+	at cn.tj.ykt.financialoffice.fw.helper.PropertyConfigurer.processProperties(PropertyConfigurer.java:39)
+	at org.springframework.beans.factory.config.PropertyResourceConfigurer.postProcessBeanFactory(PropertyResourceConfigurer.java:84)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:694)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:669)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:461)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:120)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:248)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+2014/10/19 11:08:15.515 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:08:15.515 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@15575e0] to prepare test instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:105)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:74)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:312)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'dataSource' defined in class path resource [applicationContext.xml]: Could not resolve placeholder 'jdbc.username' in string value "${jdbc.username}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:209)
+	at org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.processProperties(PropertyPlaceholderConfigurer.java:220)
+	at cn.tj.ykt.financialoffice.fw.helper.PropertyConfigurer.processProperties(PropertyConfigurer.java:39)
+	at org.springframework.beans.factory.config.PropertyResourceConfigurer.postProcessBeanFactory(PropertyResourceConfigurer.java:84)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:694)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:669)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:461)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:120)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:248)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+2014/10/19 11:08:49.273 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:08:49.476 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:08:49.476 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:08:49.476 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:08:49.476 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:08:50.147 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:08:50.179 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:08:50.194 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:08:50.272 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:08:50.272 INFO HHH000102: Fetching database metadata
+2014/10/19 11:08:50.304 INFO HHH000396: Updating schema
+2014/10/19 11:08:50.304 INFO HHH000232: Schema update complete
+2014/10/19 11:08:50.491 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@552a2b] to prepare test instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:105)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:74)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:312)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportViewService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:120)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:248)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:865)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:438)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 41 more
+2014/10/19 11:08:50.491 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:08:50.491 INFO Stopping Prototyper thread
+2014/10/19 11:08:50.491 INFO Stopping HouseKeeper thread
+2014/10/19 11:10:03.187 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:10:03.375 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:10:03.391 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:10:03.391 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:10:03.391 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:10:04.031 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:10:04.062 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:10:04.077 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:10:04.124 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:10:04.124 INFO HHH000102: Fetching database metadata
+2014/10/19 11:10:04.140 INFO HHH000396: Updating schema
+2014/10/19 11:10:04.140 INFO HHH000232: Schema update complete
+2014/10/19 11:10:04.296 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@552a2b] to prepare test instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:105)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:74)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:312)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportViewService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:120)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:248)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:865)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:438)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 41 more
+2014/10/19 11:10:04.296 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:10:04.296 INFO Stopping Prototyper thread
+2014/10/19 11:10:04.296 INFO Stopping HouseKeeper thread
+2014/10/19 11:10:27.288 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:10:27.490 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:10:27.490 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:10:27.490 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:10:27.490 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:10:28.146 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:10:28.178 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:10:28.178 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:10:28.256 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:10:28.256 INFO HHH000102: Fetching database metadata
+2014/10/19 11:10:28.271 INFO HHH000396: Updating schema
+2014/10/19 11:10:28.271 INFO HHH000232: Schema update complete
+2014/10/19 11:10:28.412 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1c4ff2c] to prepare test instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:105)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:74)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:312)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportViewService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:120)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:248)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:865)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:438)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 41 more
+2014/10/19 11:10:28.427 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:10:28.427 INFO Stopping Prototyper thread
+2014/10/19 11:10:28.427 INFO Stopping HouseKeeper thread
+2014/10/19 11:10:55.948 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:10:56.183 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:10:56.183 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:10:56.183 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:10:56.183 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:10:56.867 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:10:56.906 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:10:56.911 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:10:56.961 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:10:56.961 INFO HHH000102: Fetching database metadata
+2014/10/19 11:10:56.983 INFO HHH000396: Updating schema
+2014/10/19 11:10:56.983 INFO HHH000232: Schema update complete
+2014/10/19 11:10:57.137 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@24c414] to prepare test instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:105)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:74)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:312)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportViewService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:120)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:248)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:865)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:438)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 41 more
+2014/10/19 11:10:57.144 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:10:57.146 INFO Stopping Prototyper thread
+2014/10/19 11:10:57.147 INFO Stopping HouseKeeper thread
+2014/10/19 11:19:17.685 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:19:17.881 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:19:17.886 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:19:17.888 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:19:17.889 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:19:18.521 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:19:18.560 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:19:18.566 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:19:18.644 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:19:18.644 INFO HHH000102: Fetching database metadata
+2014/10/19 11:19:18.666 INFO HHH000396: Updating schema
+2014/10/19 11:19:18.666 INFO HHH000232: Schema update complete
+2014/10/19 11:19:18.818 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@24c414] to prepare test instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:105)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:74)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:312)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportViewService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:120)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:248)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:865)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:438)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 41 more
+2014/10/19 11:19:18.826 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:19:18.829 INFO Stopping Prototyper thread
+2014/10/19 11:19:18.829 INFO Stopping HouseKeeper thread
+2014/10/19 11:19:46.047 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:19:46.239 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:19:46.244 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:19:46.246 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:19:46.247 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:19:47.007 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:19:47.046 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:19:47.050 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:19:47.102 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:19:47.102 INFO HHH000102: Fetching database metadata
+2014/10/19 11:19:47.124 INFO HHH000396: Updating schema
+2014/10/19 11:19:47.125 INFO HHH000232: Schema update complete
+2014/10/19 11:19:47.270 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1c4ff2c] to prepare test instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:105)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:74)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:312)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportViewService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:120)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:248)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [cn.tj.ykt.financialoffice.fw.dao.GenericDao] is defined: expected single matching bean but found 2: genericDao,pageDao
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:865)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:438)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 41 more
+2014/10/19 11:19:47.278 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:19:47.281 INFO Stopping Prototyper thread
+2014/10/19 11:19:47.283 INFO Stopping HouseKeeper thread
+2014/10/19 11:20:03.937 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:20:04.128 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:20:04.133 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:20:04.134 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:20:04.136 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:20:04.771 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:20:04.809 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:20:04.813 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:20:04.863 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:20:04.863 INFO HHH000102: Fetching database metadata
+2014/10/19 11:20:04.885 INFO HHH000396: Updating schema
+2014/10/19 11:20:04.886 INFO HHH000232: Schema update complete
+2014/10/19 11:20:05.562 WARN SQL Error: 1064, SQLState: 42000
+2014/10/19 11:20:05.562 ERROR You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchars(255) default NULL,b varchar(255) default NULL)' at line 1
+2014/10/19 11:20:05.600 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:20:05.602 INFO Stopping Prototyper thread
+2014/10/19 11:20:05.602 INFO Stopping HouseKeeper thread
+2014/10/19 11:21:21.819 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:21:22.015 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:21:22.020 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:21:22.022 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:21:22.023 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:21:22.659 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:21:22.697 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:21:22.701 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:21:22.751 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:21:22.751 INFO HHH000102: Fetching database metadata
+2014/10/19 11:21:22.773 INFO HHH000396: Updating schema
+2014/10/19 11:21:22.773 INFO HHH000232: Schema update complete
+2014/10/19 11:21:23.154 WARN SQL Error: 1064, SQLState: 42000
+2014/10/19 11:21:23.154 ERROR You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchars(255),b varchar(255))' at line 1
+2014/10/19 11:21:23.164 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:21:23.167 INFO Stopping Prototyper thread
+2014/10/19 11:21:23.167 INFO Stopping HouseKeeper thread
+2014/10/19 11:21:37.445 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:21:37.637 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:21:37.642 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:21:37.643 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:21:37.645 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:21:38.284 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:21:38.322 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:21:38.326 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:21:38.375 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:21:38.375 INFO HHH000102: Fetching database metadata
+2014/10/19 11:21:38.397 INFO HHH000396: Updating schema
+2014/10/19 11:21:38.398 INFO HHH000232: Schema update complete
+2014/10/19 11:21:38.780 WARN SQL Error: 1064, SQLState: 42000
+2014/10/19 11:21:38.781 ERROR You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchars(255),b varchar(255))' at line 1
+2014/10/19 11:21:38.791 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:21:38.798 INFO Stopping Prototyper thread
+2014/10/19 11:21:38.798 INFO Stopping HouseKeeper thread
+2014/10/19 11:23:48.399 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:23:48.594 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:23:48.598 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:23:48.600 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:23:48.601 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:23:49.238 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:23:49.276 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:23:49.280 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:23:49.331 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:23:49.332 INFO HHH000102: Fetching database metadata
+2014/10/19 11:23:49.353 INFO HHH000396: Updating schema
+2014/10/19 11:23:49.354 INFO HHH000232: Schema update complete
+2014/10/19 11:23:49.768 WARN SQL Error: 1064, SQLState: 42000
+2014/10/19 11:23:49.769 ERROR You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchars(255) default NULL,b varchar(255) default NULL)' at line 1
+2014/10/19 11:23:49.784 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:23:49.786 INFO Stopping Prototyper thread
+2014/10/19 11:23:49.787 INFO Stopping HouseKeeper thread
+2014/10/19 11:26:19.641 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:26:19.837 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:26:19.843 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:26:19.845 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:26:19.846 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:26:20.490 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:26:20.535 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:26:20.540 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:26:20.629 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:26:20.629 INFO HHH000102: Fetching database metadata
+2014/10/19 11:26:20.655 INFO HHH000396: Updating schema
+2014/10/19 11:26:20.656 INFO HHH000232: Schema update complete
+2014/10/19 11:26:21.083 WARN SQL Error: 1064, SQLState: 42000
+2014/10/19 11:26:21.083 ERROR You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchars(255) default NULL,b varchar(255) default NULL)' at line 1
+2014/10/19 11:26:21.098 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:26:21.101 INFO Stopping Prototyper thread
+2014/10/19 11:26:21.101 INFO Stopping HouseKeeper thread
+2014/10/19 11:27:16.365 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:27:16.557 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:27:16.561 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:27:16.563 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:27:16.564 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:27:17.203 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:27:17.242 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:27:17.246 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:27:17.298 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:27:17.298 INFO HHH000102: Fetching database metadata
+2014/10/19 11:27:17.320 INFO HHH000396: Updating schema
+2014/10/19 11:27:17.321 INFO HHH000232: Schema update complete
+2014/10/19 11:27:17.719 WARN SQL Error: 1064, SQLState: 42000
+2014/10/19 11:27:17.719 ERROR You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchars(10) default NULL,b varchar(10) default NULL)' at line 1
+2014/10/19 11:27:17.733 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:27:17.736 INFO Stopping Prototyper thread
+2014/10/19 11:27:17.736 INFO Stopping HouseKeeper thread
+2014/10/19 11:29:05.102 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:29:05.293 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:29:05.298 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:29:05.300 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:29:05.301 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:29:05.939 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:29:05.978 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:29:05.982 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:29:06.050 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:29:06.050 INFO HHH000102: Fetching database metadata
+2014/10/19 11:29:06.071 INFO HHH000396: Updating schema
+2014/10/19 11:29:06.072 INFO HHH000232: Schema update complete
+2014/10/19 11:29:06.586 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:29:06.590 INFO Stopping Prototyper thread
+2014/10/19 11:29:06.591 INFO Stopping HouseKeeper thread
+2014/10/19 11:36:52.871 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:36:53.068 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:36:53.073 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:36:53.074 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:36:53.076 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:36:53.726 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:36:53.766 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:36:53.770 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:36:53.838 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:36:53.838 INFO HHH000102: Fetching database metadata
+2014/10/19 11:36:53.861 INFO HHH000396: Updating schema
+2014/10/19 11:36:53.862 INFO HHH000232: Schema update complete
+2014/10/19 11:36:54.367 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:36:54.370 INFO Stopping Prototyper thread
+2014/10/19 11:36:54.370 INFO Stopping HouseKeeper thread
+2014/10/19 11:38:42.624 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:38:42.881 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:38:42.887 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:38:42.889 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:38:42.890 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:38:43.681 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:38:43.728 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:38:43.733 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:38:43.811 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:38:43.811 INFO HHH000102: Fetching database metadata
+2014/10/19 11:38:43.835 INFO HHH000396: Updating schema
+2014/10/19 11:38:43.836 INFO HHH000232: Schema update complete
+2014/10/19 11:39:13.025 WARN #0001 was active for 28855 milliseconds and has been removed automaticaly. The Thread responsible was named 'main', but the last SQL it performed is unknown because the trace property is not enabled.
+2014/10/19 11:41:48.984 WARN Caught exception while allowing TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener@c3dd7e] to process 'after' execution for test: method [public void cn.tj.ykt.middleware.fw.dao.DaoTest.test003()], instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)], exception [java.lang.ClassCastException: java.math.BigInteger cannot be cast to java.lang.Integer]
+org.springframework.transaction.TransactionSystemException: Could not roll back Hibernate transaction; nested exception is org.hibernate.TransactionException: rollback failed
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.doRollback(HibernateTransactionManager.java:577)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:846)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:823)
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener$TransactionContext.endTransaction(TransactionalTestExecutionListener.java:588)
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.endTransaction(TransactionalTestExecutionListener.java:297)
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.afterTestMethod(TransactionalTestExecutionListener.java:192)
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:395)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:91)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.hibernate.TransactionException: rollback failed
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.rollback(AbstractTransactionImpl.java:215)
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.doRollback(HibernateTransactionManager.java:574)
+	... 25 more
+Caused by: org.hibernate.TransactionException: unable to rollback against JDBC connection
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doRollback(JdbcTransaction.java:167)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.rollback(AbstractTransactionImpl.java:209)
+	... 26 more
+Caused by: java.sql.SQLException: Couldn't perform the operation rollback: You can't perform any operations on this connection. It has been automatically closed by Proxool for some reason (see logs).
+	at org.logicalcobwebs.proxool.WrappedConnection.invoke(WrappedConnection.java:207)
+	at org.logicalcobwebs.proxool.WrappedConnection.intercept(WrappedConnection.java:87)
+	at com.mysql.jdbc.ConnectionProperties$$EnhancerByProxool$$5d9e50f2.rollback(<generated>)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doRollback(JdbcTransaction.java:163)
+	... 27 more
+2014/10/19 11:41:48.999 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:41:49.002 INFO Stopping Prototyper thread
+2014/10/19 11:41:49.002 INFO Stopping HouseKeeper thread
+2014/10/19 11:45:43.924 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:45:44.197 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:45:44.205 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:45:44.207 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:45:44.209 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:45:44.901 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:45:44.939 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:45:44.943 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:45:45.047 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:45:45.047 INFO HHH000102: Fetching database metadata
+2014/10/19 11:45:45.068 INFO HHH000396: Updating schema
+2014/10/19 11:45:45.069 INFO HHH000232: Schema update complete
+2014/10/19 11:45:45.487 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:45:45.489 INFO Stopping Prototyper thread
+2014/10/19 11:45:45.490 INFO Stopping HouseKeeper thread
+2014/10/19 11:48:48.023 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:48:48.263 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:48:48.270 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:48:48.272 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:48:48.274 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:48:49.049 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:48:49.105 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:48:49.111 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:48:49.184 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:48:49.184 INFO HHH000102: Fetching database metadata
+2014/10/19 11:48:49.209 INFO HHH000396: Updating schema
+2014/10/19 11:48:49.210 INFO HHH000232: Schema update complete
+2014/10/19 11:49:18.418 WARN #0002 was active for 28904 milliseconds and has been removed automaticaly. The Thread responsible was named 'main', but the last SQL it performed is unknown because the trace property is not enabled.
+2014/10/19 11:49:51.199 WARN Caught exception while allowing TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener@144d0c6] to process 'after' execution for test: method [public void cn.tj.ykt.middleware.fw.dao.DaoTest.test003()], instance [null(cn.tj.ykt.middleware.fw.dao.DaoTest)], exception [null]
+org.springframework.transaction.TransactionSystemException: Could not roll back Hibernate transaction; nested exception is org.hibernate.TransactionException: rollback failed
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.doRollback(HibernateTransactionManager.java:577)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:846)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:823)
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener$TransactionContext.endTransaction(TransactionalTestExecutionListener.java:588)
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.endTransaction(TransactionalTestExecutionListener.java:297)
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.afterTestMethod(TransactionalTestExecutionListener.java:192)
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:395)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:91)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.hibernate.TransactionException: rollback failed
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.rollback(AbstractTransactionImpl.java:215)
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.doRollback(HibernateTransactionManager.java:574)
+	... 25 more
+Caused by: org.hibernate.TransactionException: unable to rollback against JDBC connection
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doRollback(JdbcTransaction.java:167)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.rollback(AbstractTransactionImpl.java:209)
+	... 26 more
+Caused by: java.sql.SQLException: Couldn't perform the operation rollback: You can't perform any operations on this connection. It has been automatically closed by Proxool for some reason (see logs).
+	at org.logicalcobwebs.proxool.WrappedConnection.invoke(WrappedConnection.java:207)
+	at org.logicalcobwebs.proxool.WrappedConnection.intercept(WrappedConnection.java:87)
+	at $java.sql.Wrapper$$EnhancerByProxool$$d77a0f23.rollback(<generated>)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doRollback(JdbcTransaction.java:163)
+	... 27 more
+2014/10/19 11:49:51.218 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:49:51.220 INFO Stopping Prototyper thread
+2014/10/19 11:49:51.221 INFO Stopping HouseKeeper thread
+2014/10/19 11:49:54.408 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 11:49:54.603 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 11:49:54.608 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 11:49:54.610 INFO HHH000206: hibernate.properties not found
+2014/10/19 11:49:54.611 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 11:49:55.284 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 11:49:55.325 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 11:49:55.329 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 11:49:55.382 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 11:49:55.382 INFO HHH000102: Fetching database metadata
+2014/10/19 11:49:55.404 INFO HHH000396: Updating schema
+2014/10/19 11:49:55.405 INFO HHH000232: Schema update complete
+2014/10/19 11:49:55.826 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 11:49:55.828 INFO Stopping Prototyper thread
+2014/10/19 11:49:55.829 INFO Stopping HouseKeeper thread
+2014/10/19 12:02:10.131 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 12:02:10.327 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 12:02:10.332 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 12:02:10.334 INFO HHH000206: hibernate.properties not found
+2014/10/19 12:02:10.335 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 12:02:10.981 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 12:02:11.019 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 12:02:11.023 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 12:02:11.096 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 12:02:11.096 INFO HHH000102: Fetching database metadata
+2014/10/19 12:02:11.119 INFO HHH000396: Updating schema
+2014/10/19 12:02:11.119 INFO HHH000232: Schema update complete
+2014/10/19 12:02:11.527 WARN SQL Error: 1146, SQLState: 42S02
+2014/10/19 12:02:11.528 ERROR Table 'financialoffice.sys_user' doesn't exist
+2014/10/19 12:02:11.574 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 12:02:11.576 INFO Stopping Prototyper thread
+2014/10/19 12:02:11.576 INFO Stopping HouseKeeper thread
+2014/10/19 12:02:40.931 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 12:02:41.126 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 12:02:41.131 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 12:02:41.133 INFO HHH000206: hibernate.properties not found
+2014/10/19 12:02:41.134 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 12:02:41.772 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 12:02:41.811 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 12:02:41.815 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 12:02:41.915 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 12:02:41.915 INFO HHH000102: Fetching database metadata
+2014/10/19 12:02:41.937 INFO HHH000396: Updating schema
+2014/10/19 12:02:41.938 INFO HHH000232: Schema update complete
+2014/10/19 12:02:42.413 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 12:02:42.416 INFO Stopping Prototyper thread
+2014/10/19 12:02:42.416 INFO Stopping HouseKeeper thread
+2014/10/19 12:02:57.218 INFO Loading properties file from class path resource [jdbc.properties]
+2014/10/19 12:02:57.408 INFO HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2014/10/19 12:02:57.413 INFO HHH000412: Hibernate Core {4.2.15.Final}
+2014/10/19 12:02:57.415 INFO HHH000206: hibernate.properties not found
+2014/10/19 12:02:57.416 INFO HHH000021: Bytecode provider name : javassist
+2014/10/19 12:02:58.054 INFO HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2014/10/19 12:02:58.092 INFO HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014/10/19 12:02:58.096 INFO HHH000397: Using ASTQueryTranslatorFactory
+2014/10/19 12:02:58.147 INFO HHH000228: Running hbm2ddl schema update
+2014/10/19 12:02:58.147 INFO HHH000102: Fetching database metadata
+2014/10/19 12:02:58.170 INFO HHH000396: Updating schema
+2014/10/19 12:02:58.171 INFO HHH000232: Schema update complete
+2014/10/19 12:02:58.658 INFO Shutting down 'springDbPool' pool immediately [Shutdown Hook]
+2014/10/19 12:02:58.661 INFO Stopping Prototyper thread
+2014/10/19 12:02:58.661 INFO Stopping HouseKeeper thread
