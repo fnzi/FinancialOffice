@@ -1,0 +1,8 @@
+
+测试链接
+
+http://192.168.1.102:8080/FinancialOffice/doJsp/checkSessionService.do?username=1fnzi&threadname=thread1
+http://192.168.1.102:8080/FinancialOffice/doJsp/checkSessionService.do?username=2sys&threadname=thread2
+http://192.168.1.102:8080/FinancialOffice/doJsp/checkSessionService.do?username=3abc&threadname=thread3
+http://192.168.1.102:8080/FinancialOffice/doJsp/checkSessionService.do?username=4sys&threadname=thread4
+http://192.168.1.102:8080/FinancialOffice/doJsp/checkSessionService.do?username=5sys&threadname=thread5

@@ -34,7 +34,7 @@ public abstract class ViewService<R> extends MapParamHelper implements WebServic
     }
 
     /** 获取session */
-    protected HttpSession getSession() {
+    private HttpSession getSession() {
         HttpSession currentSession = session.get();
         if (currentSession == null) {
             throw new SystemException("session is null");
@@ -55,7 +55,7 @@ public abstract class ViewService<R> extends MapParamHelper implements WebServic
     /**
      * 获取session user
      */
-    public User getSessionUser() {
+    protected User getSessionUser() {
         User sessionUser = (User) getSession().getAttribute(SESSION_USER);
         return sessionUser;
     }
@@ -63,8 +63,22 @@ public abstract class ViewService<R> extends MapParamHelper implements WebServic
     /**
      * 设置session user
      */
-    public void setSessionUser(User sessionUser) {
+    protected void setSessionUser(User sessionUser) {
         getSession().setAttribute(SESSION_USER, sessionUser);
+    }
+
+    /**
+     * 获取session value
+     */
+    protected Object getSession(String key) {
+        return getSession().getAttribute(key);
+    }
+
+    /**
+     * 设置session value
+     */
+    protected void putSession(String key, Object value) {
+        getSession().setAttribute(key, value);
     }
 
     /**
