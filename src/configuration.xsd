@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="configurations">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:choice minOccurs="1" maxOccurs="unbounded">
+					<xsd:element ref="configuration" />
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="configuration">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="description" type="xsd:string"
+					minOccurs="1" />
+				<xsd:element ref="viewer" />
+				<xsd:element ref="createTabler" />
+				<xsd:element ref="catchDataer" />
+				<xsd:element ref="a3Pluginer" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" use="required">
+			</xsd:attribute>
+			<xsd:attribute name="name" type="xsd:string" use="required">
+			</xsd:attribute>
+			<xsd:attribute name="enable" type="xsd:boolean" use="required">
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- viewer -->
+	<xsd:element name="viewer">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="queryCondition" minOccurs="1"
+					maxOccurs="unbounded" />
+				<xsd:element ref="sumColumns" />
+				<xsd:element ref="hiddenColumns" minOccurs="0" />
+				<xsd:element ref="max" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="queryCondition">
+		<xsd:complexType>
+			<xsd:attribute name="type" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="date" />
+						<xsd:enumeration value="text" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="name" type="xsd:string" use="required">
+			</xsd:attribute>
+			<xsd:attribute name="mapping" type="xsd:string" use="required">
+			</xsd:attribute>
+			<xsd:attribute name="format" type="xsd:string" use="optional">
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sumColumns"></xsd:element>
+	<xsd:element name="hiddenColumns"></xsd:element>
+	<xsd:element name="max"></xsd:element>
+
+	<!-- createTabler -->
+	<xsd:element name="createTabler">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tableName" minOccurs="1" />
+				<xsd:element ref="columns" minOccurs="1" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="tableName"></xsd:element>
+	<xsd:element name="columns">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="column" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="column">
+		<xsd:complexType>
+			<xsd:attribute name="type" use="optional">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="amount" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="name" type="xsd:string" use="required">
+			</xsd:attribute>
+			<xsd:attribute name="mapping" type="xsd:string" use="required">
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- catchDataer -->
+	<xsd:element name="catchDataer">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="authUrl" minOccurs="1" />
+				<xsd:element ref="authUsername" minOccurs="1" />
+				<xsd:element ref="authPassword" minOccurs="1" />
+				<xsd:element ref="downFileUrl" minOccurs="1" />
+				<xsd:element ref="datarow" minOccurs="1" />
+				<xsd:element ref="datacol" minOccurs="1" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="authUrl"></xsd:element>
+	<xsd:element name="authUsername"></xsd:element>
+	<xsd:element name="authPassword"></xsd:element>
+	<xsd:element name="downFileUrl"></xsd:element>
+	<xsd:element name="datarow"></xsd:element>
+	<xsd:element name="datacol"></xsd:element>
+
+	<!-- a3Pluginer -->
+	<xsd:element name="a3Pluginer">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="funcId" minOccurs="1" />
+				<xsd:element ref="url" minOccurs="1" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="funcId"></xsd:element>
+	<xsd:element name="url"></xsd:element>
+
+</xsd:schema>

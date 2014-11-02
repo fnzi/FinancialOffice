@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.tj.ykt.financialoffice.fw.exception.SystemException;
+import cn.tj.ykt.financialoffice.fw.helper.LogUtil;
 import cn.tj.ykt.financialoffice.fw.util.ExcelUtil;
 import cn.tj.ykt.financialoffice.kernel.internal.handler.DefaultHandler;
 import cn.tj.ykt.financialoffice.kernel.internal.message.MessageBroker;
@@ -11,12 +12,16 @@ import cn.tj.ykt.financialoffice.kernel.internal.message.MessageBroker;
 /**
  * <pre>
  * 功能描述：解析获取Excel中data
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
 public class AnalyticalDataHandler extends DefaultHandler {
 
     @Override
     public String process(MessageBroker messageBroker) {
+
+        LogUtil.logInfo("解析获取Excel中data");
 
         String filePath = messageBroker.getTempFilePath();
         if (filePath == null || "".equals(filePath)) {
@@ -42,7 +47,7 @@ public class AnalyticalDataHandler extends DefaultHandler {
                 throw new SystemException("excel行解析失败");
             }
 
-            for (int i = row; i < excelInData.size(); i++) {
+            next: for (int i = row; i < excelInData.size(); i++) {
 
                 List<String> line = excelInData.get(i);
                 if (line.isEmpty()) {
@@ -50,7 +55,15 @@ public class AnalyticalDataHandler extends DefaultHandler {
                 }
 
                 List<String> record = new ArrayList<String>();
-                for (int j = col; col < line.size(); j++) {
+
+                // 排除总计数据
+                for (int j = col; j < line.size(); j++) {
+                    if ("总计".equals(line.get(j).trim())) {
+                        continue next;
+                    }
+                }
+
+                for (int j = col; j < line.size(); j++) {
                     record.add(line.get(j));
                 }
                 data.add(record);
@@ -58,6 +71,7 @@ public class AnalyticalDataHandler extends DefaultHandler {
             messageBroker.setData(data);
             return SUCCESS;
         } catch (Exception e) {
+            e.printStackTrace();
             throw new SystemException(e.getMessage(), e);
         }
     }

@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurations>
-	<configuration id="MerchantSettleReport" name="商户结算日报"
+<configurations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="configuration.xsd">
+	<configuration id="MerchantSettleReport" name="小额消费商户日结日报"
 		enable="true">
-		<description>商户结算日报</description>
+		<description>小额消费商户日结日报</description>
 		<!-- view系 -->
 		<viewer>
-			<queryCondition type="date" name="结算日期" mapping="settle_date"></queryCondition>
+			<queryCondition type="date" name="结算日期" mapping="settle_date"
+				format="yyyyMMdd"></queryCondition>
 			<queryCondition type="text" name="商户名称" mapping="merchant_name"></queryCondition>
 			<!-- 合计 -->
 			<sumColumns>trade_amount,merchant_settle_amount,discount_earnings,consume_fee,settle_fee
 			</sumColumns>
+			<!-- 隐藏字段 -->
+			<hiddenColumns>create_date,check_date</hiddenColumns>
+			<!-- pagesize -->
 			<max>20</max>
 		</viewer>
 		<!-- 创建table系 -->
@@ -27,6 +32,8 @@
 				<column name="结算手续费" mapping="settle_fee"></column>
 				<column name="卡类型" mapping="card_type"></column>
 				<column name="结算方式" mapping="settle_type"></column>
+				<column name="添加时间" mapping="create_date"></column>
+				<column name="审核时间" mapping="check_date"></column>
 			</columns>
 		</createTabler>
 		<!-- 抓取data系 -->
@@ -36,9 +43,9 @@
 			<authPassword>3</authPassword>
 			<downFileUrl>4</downFileUrl>
 			<!-- 数据有效行 -->
-			<datarow>7</datarow>
+			<datarow>3</datarow>
 			<!-- 数据有效列 -->
-			<datacol>8</datacol>
+			<datacol>0</datacol>
 		</catchDataer>
 		<!-- A3插件系 -->
 		<a3Pluginer>

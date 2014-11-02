@@ -2,7 +2,9 @@ package cn.tj.ykt.financialoffice.fw.code;
 
 /**
  * <pre>
- * 枚举描述基类
+ * 功能描述：枚举描述基类
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
 public interface ICodeEnum {

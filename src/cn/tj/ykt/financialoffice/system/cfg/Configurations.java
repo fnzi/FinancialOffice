@@ -6,6 +6,8 @@ import java.util.Map;
 /**
  * <pre>
  * 功能描述：配置集合描述
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
 public class Configurations {

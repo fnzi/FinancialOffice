@@ -3,6 +3,8 @@ package cn.tj.ykt.financialoffice.system.cfg;
 /**
  * <pre>
  * 功能描述：A3导入系配置实体描述
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
 public class A3Pluginer {

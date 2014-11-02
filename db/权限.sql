@@ -1,11 +1,12 @@
-DROP TABLE IF EXISTS `sys_function`;
-CREATE TABLE `sys_function` (
-  `fid` int(11) NOT NULL auto_increment,
-  `fname` varchar(255) default NULL,
-  `flink` varchar(255) default NULL,
-  `fmodule` varchar(255) default NULL,
+DROP TABLE IF EXISTS `sys_menu`;
+CREATE TABLE `sys_menu` (
+  `mid` int(11) NOT NULL auto_increment,
+  `mname` varchar(255) default NULL,
+  `mlink` varchar(255) default NULL,
+  `mmodule` varchar(255) default NULL,
   `keyid` varchar(255) default NULL,
-  PRIMARY KEY  (`fid`)
+  `enable` varchar(10) default NULL,
+  PRIMARY KEY  (`mid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `sys_role`;
@@ -29,15 +30,15 @@ CREATE TABLE `sys_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `sys_refrolefunc`;
-CREATE TABLE `sys_refrolefunc` (
-  `frid` int(11) NOT NULL auto_increment,
+DROP TABLE IF EXISTS `sys_refrolemenu`;
+CREATE TABLE `sys_refrolemenu` (
+  `mrid` int(11) NOT NULL auto_increment,
   `rid` int(11) default NULL,
-  `fid` int(11) default NULL,
-  PRIMARY KEY  (`frid`),
+  `mid` int(11) default NULL,
+  PRIMARY KEY  (`mrid`),
   KEY `rid` (`rid`),
-  KEY `fid` (`fid`),
-  CONSTRAINT `refrolefunc_ibfk_1` FOREIGN KEY (`rid`) REFERENCES `sys_role` (`rid`),
-  CONSTRAINT `refrolefunc_ibfk_2` FOREIGN KEY (`fid`) REFERENCES `sys_function` (`fid`)
+  KEY `mid` (`mid`),
+  CONSTRAINT `refrolemenu_ibfk_1` FOREIGN KEY (`rid`) REFERENCES `sys_role` (`rid`),
+  CONSTRAINT `refrolemenu_ibfk_2` FOREIGN KEY (`mid`) REFERENCES `sys_menu` (`mid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

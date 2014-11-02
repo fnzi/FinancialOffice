@@ -19,6 +19,13 @@ import cn.tj.ykt.financialoffice.web.service.JspResult;
 import cn.tj.ykt.financialoffice.web.service.JspService;
 import cn.tj.ykt.financialoffice.web.service.impl.TransmitReportService;
 
+/**
+ * <pre>
+ * 功能描述：通用viewaction处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 @Controller
 public class ViewAction extends ActionSupport {
 
@@ -37,6 +44,8 @@ public class ViewAction extends ActionSupport {
             Map<String, Object> param = getRequstMap();
 
             JsonService service = (JsonService) SpringUtil.getBean(serviceName);
+            service.setSession(getSession());
+
             Object ret = service.execute(param);
             String retJson = JsonUtil.beanToJson(ret);
 
@@ -56,13 +65,15 @@ public class ViewAction extends ActionSupport {
             Map<String, Object> param = getRequstMap();
 
             JspService service = (JspService) SpringUtil.getBean(serviceName);
+
+            service.setSession(getSession());
             JspResult ret = service.execute(param);
 
             setModelMap(ret.getData(), model);
             return ret.getPath();
         } catch (Exception e) {
             LogUtil.logError(e.getMessage(), module, e);
-            model.addAttribute("message", "出错了:" + e.getMessage());
+            model.addAttribute("message", "出错了：" + e.getMessage());
             return "404";
         }
     }
@@ -85,7 +96,7 @@ public class ViewAction extends ActionSupport {
             return "transmitReportStatus";
         } catch (Exception e) {
             LogUtil.logError(e.getMessage(), module, e);
-            model.addAttribute("status", "出错了:" + e.getMessage());
+            model.addAttribute("message", "出错了：" + e.getMessage());
             return "404";
         }
     }

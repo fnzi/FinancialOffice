@@ -2,7 +2,9 @@ package cn.tj.ykt.financialoffice.fw.exception;
 
 /**
  * <pre>
- * 描述数据库级别exception
+ * 功能描述：描述数据库级别exception
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
 public class DaoException extends GenericException {

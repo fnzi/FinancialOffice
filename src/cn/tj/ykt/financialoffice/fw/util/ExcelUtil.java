@@ -16,6 +16,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import cn.tj.ykt.financialoffice.fw.helper.LogUtil;
 
+/**
+ * <pre>
+ * 功能描述：excel文件解析处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class ExcelUtil {
 
     public static List<List<String>> analyseExcel(String url) throws Exception {

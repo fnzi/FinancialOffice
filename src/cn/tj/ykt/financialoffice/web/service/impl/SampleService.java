@@ -10,6 +10,13 @@ import org.springframework.stereotype.Service;
 import cn.tj.ykt.financialoffice.web.service.JspResult;
 import cn.tj.ykt.financialoffice.web.service.JspService;
 
+/**
+ * <pre>
+ * 功能描述：演示服务类(临时)
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 @Service("sampleService")
 public class SampleService extends JspService {
 
@@ -22,7 +29,7 @@ public class SampleService extends JspService {
 
         HttpSession session = getParam(param, SESSION_KEY);
         assert session != null;
-        
+
         Map<String, Object> ret = new HashMap<String, Object>();
         ret.put("msg", "123");
 

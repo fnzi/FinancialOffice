@@ -4,6 +4,13 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * <pre>
+ * 功能描述：Mysql分页扩展dao处理实现类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class MysqlPageDaoImpl extends GenericDaoImpl implements PageDao {
 
     @Override

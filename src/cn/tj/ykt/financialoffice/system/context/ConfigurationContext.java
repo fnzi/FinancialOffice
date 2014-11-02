@@ -7,6 +7,13 @@ import cn.tj.ykt.financialoffice.system.cfg.Configurations;
 import cn.tj.ykt.financialoffice.system.cfg.CreateTabler;
 import cn.tj.ykt.financialoffice.system.cfg.Viewer;
 
+/**
+ * <pre>
+ * 功能描述：配置文件描述接口
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public interface ConfigurationContext {
 
     public Configurations getConfigurations();

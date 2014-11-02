@@ -10,6 +10,13 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 import cn.tj.ykt.financialoffice.fw.util.Base64Util;
 
+/**
+ * <pre>
+ * 功能描述：属性文件处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class PropertyConfigurer extends PropertyPlaceholderConfigurer {
 
     /** 需要解密处理的属性 */

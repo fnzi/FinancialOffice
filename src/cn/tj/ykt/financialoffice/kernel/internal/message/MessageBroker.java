@@ -2,7 +2,17 @@ package cn.tj.ykt.financialoffice.kernel.internal.message;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
+import cn.tj.ykt.financialoffice.system.cfg.Column;
+
+/**
+ * <pre>
+ * 功能描述：内核结点数据传输描述类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class MessageBroker {
 
     // -----------------------------------
@@ -18,6 +28,10 @@ public class MessageBroker {
     /** 有效列 */
     private Integer col;
 
+    /** 表名 */
+    private String tableName;
+    /** 字段列 */
+    private Map<String, Column> columns;
     // -----------------------------------
 
     private String authUrl;
@@ -111,6 +125,22 @@ public class MessageBroker {
 
     public void setCol(Integer col) {
         this.col = col;
+    }
+
+    public String getTableName() {
+        return tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    public Map<String, Column> getColumns() {
+        return columns;
+    }
+
+    public void setColumns(Map<String, Column> columns) {
+        this.columns = columns;
     }
 
 }

@@ -2,6 +2,13 @@ package cn.tj.ykt.financialoffice.fw.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * <pre>
+ * 功能描述：Json处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class JsonUtil {
     private static ObjectMapper mapper;
 

@@ -2,6 +2,13 @@ package cn.tj.ykt.financialoffice.fw.util;
 
 import it.sauronsoftware.base64.Base64;
 
+/**
+ * <pre>
+ * 功能描述：base64加密解密处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class Base64Util {
 
     public static String charset = "utf-8";

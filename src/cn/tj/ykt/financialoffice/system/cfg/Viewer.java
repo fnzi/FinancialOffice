@@ -3,22 +3,23 @@ package cn.tj.ykt.financialoffice.system.cfg;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
 /**
  * <pre>
  * 功能描述：view系配置实体描述
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
-@XmlRootElement(name = "viewer")
 public class Viewer {
 
-    // 显示data字段
+    /** 求和字段 */
     private List<String> sumColumns = new ArrayList<String>();
-    // 检索条件处理
+    /** 检索条件处理 */
     private List<QueryCondition> queryConditions = new ArrayList<QueryCondition>();
-    // 页条数
+    /** 页条数 */
     private int max;
+    /** 隐藏字段 */
+    private List<String> hiddenColumns = new ArrayList<String>();
 
     public List<QueryCondition> getQueryConditions() {
         return queryConditions;
@@ -42,5 +43,13 @@ public class Viewer {
 
     public void setSumColumns(List<String> sumColumns) {
         this.sumColumns = sumColumns;
+    }
+
+    public List<String> getHiddenColumns() {
+        return hiddenColumns;
+    }
+
+    public void setHiddenColumns(List<String> hiddenColumns) {
+        this.hiddenColumns = hiddenColumns;
     }
 }

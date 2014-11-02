@@ -2,7 +2,9 @@ package cn.tj.ykt.financialoffice.fw.exception;
 
 /**
  * <pre>
- * exception基类
+ * 功能描述：exception基类
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
 public class GenericException extends RuntimeException {

@@ -5,6 +5,8 @@ import cn.tj.ykt.financialoffice.fw.code.ICodeEnum;
 /**
  * <pre>
  * 功能描述：view系查询条件配置实体描述
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
 public class QueryCondition {
@@ -50,6 +52,10 @@ public class QueryCondition {
      * 查询条件的数据库字段名字
      */
     private String mapping;
+    /**
+     * 查询条件的格式化（画面校验）
+     */
+    private String format;
 
     public String getType() {
         return type;
@@ -81,6 +87,14 @@ public class QueryCondition {
 
     public void setMapping(String mapping) {
         this.mapping = mapping;
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
     }
 
 }

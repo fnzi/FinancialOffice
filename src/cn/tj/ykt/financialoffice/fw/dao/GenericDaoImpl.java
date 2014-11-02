@@ -25,6 +25,13 @@ import org.hibernate.jdbc.Work;
 
 import com.sun.org.apache.commons.beanutils.PropertyUtils;
 
+/**
+ * <pre>
+ * 功能描述：通用dao处理实现类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 @SuppressWarnings({ "unchecked" })
 public class GenericDaoImpl implements GenericDao {
 

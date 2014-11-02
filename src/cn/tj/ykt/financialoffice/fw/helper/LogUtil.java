@@ -5,6 +5,13 @@ import java.text.MessageFormat;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
+/**
+ * <pre>
+ * 功能描述：通用log记录处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class LogUtil {
 
     public static final int DEBUG = 0;
@@ -20,7 +27,10 @@ public class LogUtil {
 
     public static void log(int level, Throwable t, String msg, String module, Object... params) {
         Logger logger = Logger.getLogger(module);
-        String finalMsg = MessageFormat.format(msg, params);
+        String finalMsg = "";
+        if (msg != null) {
+            finalMsg = MessageFormat.format(msg, params);
+        }
         logger.log(levelObjs[level], finalMsg, t);
     }
 

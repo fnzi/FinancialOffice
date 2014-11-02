@@ -5,6 +5,7 @@
 
 url:
 http://127.0.0.1:8080/FinancialOffice/doJsp/reportViewService.action
+http://127.0.0.1/FinancialOffice/doJsp/reportViewService.action?report=MerchantSettleReport
 
 service class:
 ReportViewService
@@ -44,7 +45,7 @@ http请求作为手工执行的补充处理。
 **********************************************************************
 6.关于数据库查询
 
-GenericDao接口中共有三种方式操作数据库。
+GenericDao接口中共有四种方式操作数据库。
 1.hql
 2.sql
 3.hibernate的crud
@@ -106,5 +107,33 @@ example：
 http://127.0.0.1:8080/FinancialOffice/doReport/MerchantSettleReport
 
 
+10.通用分页处理：
+演示连接：
+http://127.0.0.1:8080/FinancialOffice/doJsp/pageTestService.action
+注，测试演示连接
+请确认有表   create table if not exists sss(a varchar(255) default NULL,b varchar(255) default NULL)
+且确认有数据。
 
 
+增加了分页dao
+增加了分页画面处理
+
+11.Javadoc约定：
+
+样例：
+/**
+ * <pre>
+ * 功能描述：通用viewaction处理
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
+
+ 标明功能描述，创建者，修改者（维护人）
+
+ 12.常规service中session的获取方法：
+
+        HttpSession session = getParam(param, SESSION_KEY);
+        session.setAttribute("USER", "user");
+
+前台页面采用el表达式、jstl标签均可取值

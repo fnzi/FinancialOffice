@@ -4,9 +4,11 @@ import java.util.Map;
 
 /**
  * <pre>
- * view系ajax画面显示服务基类
+ * 功能描述：view系ajax(Json)画面显示服务基类
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
- * */
+ */
 public abstract class JsonService extends ViewService<JsonResult> {
 
     @Override

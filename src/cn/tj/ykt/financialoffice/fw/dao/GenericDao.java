@@ -9,6 +9,13 @@ import java.util.Map;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.DetachedCriteria;
 
+/**
+ * <pre>
+ * 功能描述：通用dao处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public interface GenericDao {
 
     /**

@@ -2,6 +2,13 @@ package cn.tj.ykt.financialoffice.fw.dao;
 
 import java.util.Map;
 
+/**
+ * <pre>
+ * 功能描述：分页扩展dao处理接口
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public interface PageDao extends GenericDao {
 
     /**

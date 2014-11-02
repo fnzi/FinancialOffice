@@ -1,5 +1,12 @@
 package cn.tj.ykt.financialoffice.web.service;
 
+/**
+ * <pre>
+ * 功能描述：Json服务类返回类型描述类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class JsonResult {
 
     private boolean success;

@@ -4,14 +4,16 @@
 		<description>ddd</description>
 		<!-- view系 -->
 		<viewer>
-			<queryCondition type="" name="" mapping=""></queryCondition>
+			<queryCondition type="" name="" mapping="" format=""></queryCondition>
 			<queryCondition type="" name="" mapping=""></queryCondition>
 			<queryCondition type="" name="" mapping=""></queryCondition>
 			<!-- 合计 -->
 			<sumColumns>a,b</sumColumns>
+			<!-- 隐藏字段 -->
+			<hiddenColumns>create_date,check_date</hiddenColumns>
 			<max>20</max>
 		</viewer>
-		<!-- 创建table系 -->
+		<!-- 创建table系 必须有创建时间create_date和审核时间字段check_date -->
 		<createTabler>
 			<tableName></tableName>
 			<columns>

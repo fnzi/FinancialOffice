@@ -11,8 +11,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+/**
+ * <pre>
+ * 功能描述：Action辅助处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class ActionSupport {
     public static final String SESSION_KEY = "__session_key__";
+    public static final String SESSION_USER = "__session_key_user__";
 
     public void setModelMap(Map<String, Object> result, ModelMap model) {
         for (String key : result.keySet()) {
@@ -36,9 +44,10 @@ public class ActionSupport {
     }
 
     /**
+     * <pre>
      * 获取session
-     * 
      * @return 返回session
+     * </pre>
      */
     public HttpSession getSession() {
 
@@ -46,32 +55,32 @@ public class ActionSupport {
     }
 
     /**
+     * <pre>
      * 向session中添加值
-     * 
-     * @param key
-     *            主键
-     * @param value
-     *            值
+     * @param key 主键
+     * @param value 值
+     * </pre>
      */
     public void setSession(String key, Object value) {
         getRequest().getSession().setAttribute(key, value);
     }
 
     /**
+     * <pre>
      * 在session中获取值
-     * 
-     * @param key
-     *            主键
+     * @param key 主键
      * @return 返回值
+     * </pre>
      */
     public Object getSessionValue(String key) {
         return getRequest().getSession().getAttribute(key);
     }
 
     /**
+     * <pre>
      * 获取request
-     * 
      * @return 返回request
+     * </pre>
      */
     public HttpServletRequest getRequest() {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -79,9 +88,10 @@ public class ActionSupport {
     }
 
     /**
+     * <pre>
      * 获取根目录
-     * 
      * @return 返回根目录
+     * </pre>
      */
     public String getRealPath() {
         return getSession().getServletContext().getRealPath("/");

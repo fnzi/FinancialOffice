@@ -12,7 +12,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link type="text/css" rel="stylesheet" href="<%=basePath%>css/pager.css" />
 </head>
 <body>
-
+<div>
+${USER }
+</div>
 <%
 Page pager = (Page)request.getAttribute("pager");
 for(Object os : pager.getData()) {

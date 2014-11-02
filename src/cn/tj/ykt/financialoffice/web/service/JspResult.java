@@ -2,6 +2,13 @@ package cn.tj.ykt.financialoffice.web.service;
 
 import java.util.Map;
 
+/**
+ * <pre>
+ * 功能描述：view系jsp服务返回类型描述类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class JspResult {
 
     /** 返回的jsp路径 */

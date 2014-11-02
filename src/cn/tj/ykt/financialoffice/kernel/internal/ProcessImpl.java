@@ -13,6 +13,13 @@ import cn.tj.ykt.financialoffice.kernel.internal.message.MessageBroker;
 import cn.tj.ykt.financialoffice.kernel.internal.model.Plugin;
 import cn.tj.ykt.financialoffice.kernel.internal.model.Plugins;
 
+/**
+ * <pre>
+ * 功能描述：内核处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class ProcessImpl implements Process {
 
     public static String PLUGIN_PATH = "/process-plugin.xml";
@@ -89,6 +96,7 @@ public class ProcessImpl implements Process {
 
             }
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException(e.getMessage(), e);
         }
     }

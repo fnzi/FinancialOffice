@@ -5,7 +5,9 @@ import org.springframework.context.ApplicationContextAware;
 
 /**
  * <pre>
- * 获取spring环境
+ * 功能描述：获取spring环境
+ * 创建者：闫世峰
+ * 修改者：
  * </pre>
  */
 public class SpringUtil implements ApplicationContextAware {

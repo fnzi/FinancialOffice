@@ -2,6 +2,13 @@ package cn.tj.ykt.financialoffice.fw.dao;
 
 import java.util.List;
 
+/**
+ * <pre>
+ * 功能描述：分页描述处理类
+ * 创建者：闫世峰
+ * 修改者：
+ * </pre>
+ */
 public class Page {
     private int showCount = 10; // 每页显示记录数
     private int totalPage; // 总页数
@@ -86,8 +93,8 @@ public class Page {
             sb.append("	<li class=\"pageinfo\">共" + totalPage + "页</li>\n");
             sb.append("</ul>\n");
             sb.append("<script type=\"text/javascript\">\n");
-            sb.append("function nextPage(page){");
-            sb.append("	if(true && document.forms[0]){\n");
+            sb.append("function nextPage(page){\n");
+            sb.append("	if(false && document.forms[0]){\n");
             sb.append("		var url = document.forms[0].getAttribute(\"action\");\n");
             sb.append("		if(url.indexOf('?')>-1){url += \"&" + (entityOrField ? "currentPage" : "page.currentPage") + "=\";}\n");
             sb.append("		else{url += \"?" + (entityOrField ? "currentPage" : "page.currentPage") + "=\";}\n");
