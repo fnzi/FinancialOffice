@@ -1,24 +1,46 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" " http://www.w3.org/TR/html4/strict.dtd">
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/pages/common/taglibs.jsp"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.List"%>
-<%@page import="cn.tj.ykt.financialoffice.fw.entity.Menu"%>
-<%@page import="cn.tj.ykt.financialoffice.web.service.JspResult"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>报表显示</title>
-</head>
+<%="<meta http-equiv=\"X-UA-Compatible\" content=\"IE=EmulateIE8\" />" %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<% response.setHeader("Pragma","no-cache");response.setHeader("Cache-Control","no-store");response.setDateHeader("Expires",-1);%>
+<title>${title}</title>
+<%@ include file="/WEB-INF/pages/common/ext.jsp"%>
+<script type="text/javascript">
+	var ctx = '${ctx}';
+	var userName = '${sessionScope.__session_key_user__.username }';
+	var userRid = '${sessionScope.__session_key_user__.role.rid }';
+</script>
+<script type="text/javascript" src="${ctx}/js/main.js"></script>
+<style type="text/css">
+a {
+	text-decoration: none;
+}
 
-<frameset rows="25%,75%">
-	<frame src="${ctx}/doJsp/mainTopService.do">
-	<frameset cols="25%,75%">
-		<frame src="${ctx}/doJsp/mainLeftService.do">
-		<frame src="${ctx}/doJsp/mainRightService.do" name="mainFrame">
-	</frameset>
-</frameset>
+a:link {
+	text-decoration: none;
+	color: black
+}
+
+　　a:hover {
+	color: blue
+}
+
+　　a:visited {
+	text-decoration: none;
+	color: black
+}
+
+.html .body {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	border: none
+}
+</style>
+</head>
 <body>
 </body>
 </html>

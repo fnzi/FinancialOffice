@@ -11,6 +11,7 @@ import cn.tj.ykt.financialoffice.fw.helper.SpringUtil;
 import cn.tj.ykt.financialoffice.kernel.internal.handler.DefaultHandler;
 import cn.tj.ykt.financialoffice.kernel.internal.message.MessageBroker;
 import cn.tj.ykt.financialoffice.system.cfg.Column;
+import cn.tj.ykt.financialoffice.system.cfg.check.SystemCheck;
 
 /**
  * <pre>
@@ -41,12 +42,8 @@ public class CreateTableHandler extends DefaultHandler {
             colStrs.add(col);
         }
 
-        if (!columns.containsKey("create_date")) {
-            throw new RuntimeException("配置文件配置错误，没有发现数据导入时间[create_date]字段");
-        }
-        if (!columns.containsKey("check_date")) {
-            throw new RuntimeException("配置文件配置错误，没有发现审核时间[check_date]字段");
-        }
+        // 基础系统字段检查
+        SystemCheck.checkSystemColumn(columns);
 
         String sql = createTableSql(tableName, colStrs);
 
@@ -60,7 +57,11 @@ public class CreateTableHandler extends DefaultHandler {
         String sql = "create table if not exists " + tableName + "(";
 
         for (String col : columns) {
-            sql = sql + col + " varchar(255) default NULL,";
+            if (col.equals("sort_index")) {
+                sql = sql + col + " int(11) NOT NULL,";
+            } else {
+                sql = sql + col + " varchar(255) default NULL,";
+            }
         }
 
         int len = sql.length();

@@ -10,6 +10,10 @@ false：无效
 date：日期
 text：文本框
 
+2. hasNum 
+true:有序号
+fasle：没有序号
+
 **********viewer***************
 
 **********createTabler***************
@@ -17,3 +21,51 @@ text：文本框
 amount：千分符
 
 **********createTabler***************
+
+
+**********data_type字段***************
+数据类型：
+10：汇总数据
+20：总计数据
+30：调整数据
+------31：调整数据(初始插入)调整表中的状态
+------32：调整数据(审核之后)调整表中的状态
+------33：调整数据(生成凭证之后)调整表中的状态
+------39：调整数据(初始化删除)调整表中的状态
+40：日报header
+41：header中变化数据
+90: 废弃数据
+**********sort_index字段***************
+标记原始日报数据在excel中所在行位置。
+**********batch_no字段***************
+标记同一批次同步的数据。
+
+
+************凭证查询sql*************
+select * from merchantsettlereport WHERE batch_no='1420797401948' or data_type = '40' order by sort_index
+************画面查询sql*************
+select * from merchantsettlereport WHERE data_type = '10' order by sort_index
+************调整数据sql*************
+SELECT
+	sa.*
+FROM
+	sys_adjust sa,
+	ref_adjust_report rar,
+	merchantsettlereport report
+WHERE
+	rar.adjustid = sa.adjustId
+AND rar.reportbatchno = report.batch_no
+AND report.data_type = '30'
+
+
+************调整凭证状态*************
+status：
+00:初始生成状态
+10:导入成功
+
+select gt.* from sys_gl_trntm gt where gt.adjustId = '' and gt.status = '00'
+
+
+
+
+

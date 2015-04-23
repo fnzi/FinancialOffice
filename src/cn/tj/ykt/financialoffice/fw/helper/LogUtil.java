@@ -23,7 +23,7 @@ public class LogUtil {
 
     public static final Level[] levelObjs = { Level.DEBUG, Level.INFO, Level.WARN, Level.ERROR };
 
-    public static final String defaultModule = "cn.tj.baseextweb";
+    public static final String defaultModule = "cn.tj.ykt.financialoffice";
 
     public static void log(int level, Throwable t, String msg, String module, Object... params) {
         Logger logger = Logger.getLogger(module);

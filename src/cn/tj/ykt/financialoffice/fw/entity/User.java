@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "sys_user")
 public class User implements java.io.Serializable {
@@ -18,10 +20,11 @@ public class User implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long uid;
+    private Long urid;
     private String username;
     private String password;
     private String realname;
-
+    @JsonIgnore
     private Role role;
 
     @Column(name = "username")
@@ -71,5 +74,13 @@ public class User implements java.io.Serializable {
     public void setRole(Role role) {
         this.role = role;
     }
+
+	public Long getUrid() {
+		return urid;
+	}
+
+	public void setUrid(Long urid) {
+		this.urid = urid;
+	}
 
 }

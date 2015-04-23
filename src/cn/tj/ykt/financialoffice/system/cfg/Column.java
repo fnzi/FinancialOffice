@@ -22,6 +22,11 @@ public class Column {
      */
     private String mapping;
 
+    /**
+     * 字段默认值
+     */
+    private String defaultValue = "";
+
     public Column() {
     }
 
@@ -53,5 +58,13 @@ public class Column {
 
     public void setMapping(String mapping) {
         this.mapping = mapping;
+    }
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
     }
 }

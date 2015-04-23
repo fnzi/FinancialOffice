@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Insert title here</title>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//菜单隐藏展开
+	var tabs_i=0
+	$('.vtitle').click(function(){
+		var _self = $(this);
+		var j = $('.vtitle').index(_self);
+		if( tabs_i == j ) return false; tabs_i = j;
+		$('.vtitle em').each(function(e){
+			if(e==tabs_i){
+				$('em',_self).removeClass('v01').addClass('v02');
+			}else{
+				$(this).removeClass('v02').addClass('v01');
+			}
+		});
+		$('.vcon').slideUp().eq(tabs_i).slideDown();
+	});
+})
+</script>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+a,a:hover{text-decoration: none;}
+
+/*收缩菜单*/
+.v{float:right;width:14px;height:14px;overflow:hidden;background:url(images/vicon.png) no-repeat;display:inline-block;margin-top:-5px;margin-bottom:-5px;}
+.v01{background-position:0 0;}
+.v02{background-position:0 -16px;;}
+.vtitle{height:35px;background:#E0E0E0;line-height:35px;border:1px solid #ccb6a9;margin-top:-1px;padding-left:20px;font-size:15px;color:#4d4d4d;font-family:"\5FAE\8F6F\96C5\9ED1";cursor:pointer;}
+.vtitle em{margin:10px 10px 0 0;}
+.vconlist{background:#E0E0E0;}
+.vconlist li a{height:30px;line-height:30px;padding-left:30px;display:block;font-size:14px;color:#866f67;font-family:"\5FAE\8F6F\96C5\9ED1";}
+.vconlist li.select a,.vconlist li a:hover{color:#ed4948;text-decoration:none;}
+</style>
+
+</head>
+<body>
+
+<div style="width:268px;margin:30px auto 0 auto;">
+
+	<div class="vtitle"><em class="v v02"></em>日报同步</div>
+		<div class="vcon">
+		<ul class="vconlist clearfix">
+			<li class="select"><a href="javascript:;">小额平台日结算日报</a></li>
+			<li><a href="javascript:;">小额平台周结算日报</a></li>
+			<li><a href="javascript:;">日报导入状态</a></li>
+		</ul>
+	</div>
+	<div class="vtitle"><em class="v"></em>手工调整</div>
+		<div class="vcon" style="display: none;">
+		<ul class="vconlist clearfix">
+			<li><a href="javascript:;">手工调整添加 审核功能</a></li>
+		</ul>
+	</div>
+	<div class="vtitle"><em class="v"></em>系统维护</div>
+		<div class="vcon" style="display: none;">
+		<ul class="vconlist clearfix">
+			<li><a href="javascript:;">用户维护</a></li>
+			<li><a href="javascript:;">角色维护</a></li>
+			<li><a href="javascript:;">商户账户信息维护（合同号）</a></li>
+			<li><a href="javascript:;">网点信息维护</a></li>
+			<li><a href="javascript:;">26家银行信息维护</a></li>
+			<li><a href="javascript:;">科目摘要信息维护</a></li>
+			<li><a href="javascript:;">银行账户管理功能</a></li>
+			<li><a href="javascript:;">资金池</a></li>
+		</ul>
+	</div>
+
+</div>
+
+</body>
+</html>

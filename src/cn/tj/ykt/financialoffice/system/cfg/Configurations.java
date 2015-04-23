@@ -1,6 +1,8 @@
 package cn.tj.ykt.financialoffice.system.cfg;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,6 +15,7 @@ import java.util.Map;
 public class Configurations {
 
     private Map<String, Configuration> cfgs = new HashMap<String, Configuration>();
+    private List<ExportQueryData> exportQueryData = new ArrayList<ExportQueryData>();
 
     public Map<String, Configuration> getCfgs() {
         return cfgs;
@@ -20,6 +23,14 @@ public class Configurations {
 
     public void setCfgs(Map<String, Configuration> cfgs) {
         this.cfgs = cfgs;
+    }
+
+    public List<ExportQueryData> getExportQueryData() {
+        return exportQueryData;
+    }
+
+    public void setExportQueryData(List<ExportQueryData> exportQueryData) {
+        this.exportQueryData = exportQueryData;
     }
 
 }

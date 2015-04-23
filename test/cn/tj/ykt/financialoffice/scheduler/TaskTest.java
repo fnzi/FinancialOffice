@@ -3,7 +3,6 @@ package cn.tj.ykt.financialoffice.scheduler;
 import org.junit.Test;
 
 import cn.tj.ykt.financialoffice.fw.helper.SpringUtil;
-import cn.tj.ykt.financialoffice.scheduler.Task;
 import cn.tj.ykt.financialoffice.test.BaseTest;
 
 public class TaskTest extends BaseTest {

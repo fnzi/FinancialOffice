@@ -17,7 +17,7 @@ import cn.tj.ykt.financialoffice.web.service.JspService;
 @Service("mainRightService")
 public class MainRightService extends JspService{
 
-	public JspResult execute(Map<String, Object> param) {
+	public JspResult doExecute(Map<String, Object> param) {
 		return new JspResult("main/mainRight",param);
 	}
 

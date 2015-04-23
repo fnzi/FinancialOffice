@@ -76,6 +76,11 @@
 		<servlet-class>cn.tj.ykt.financialoffice.servlet.SystemInitServlet</servlet-class>
 		<load-on-startup>3</load-on-startup>
 	</servlet>
+	<servlet>
+		<servlet-name>ScheduleInitServlet</servlet-name>
+		<servlet-class>cn.tj.ykt.financialoffice.servlet.ScheduleInitServlet</servlet-class>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>

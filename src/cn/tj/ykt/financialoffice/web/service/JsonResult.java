@@ -23,6 +23,12 @@ public class JsonResult {
         this.msg = msg;
     }
 
+    public JsonResult(boolean success, Object data) {
+        super();
+        this.success = success;
+        this.data = data;
+    }
+
     public boolean getSuccess() {
         return success;
     }

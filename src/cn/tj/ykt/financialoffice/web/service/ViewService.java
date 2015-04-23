@@ -3,6 +3,7 @@ package cn.tj.ykt.financialoffice.web.service;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import cn.tj.ykt.financialoffice.fw.action.ActionSupport;
@@ -40,6 +41,22 @@ public abstract class ViewService<R> extends MapParamHelper implements WebServic
             throw new SystemException("session is null");
         }
         return currentSession;
+    }
+    
+    private ThreadLocal<HttpServletResponse> response = new ThreadLocal<HttpServletResponse>();
+
+    /** 设置response */
+    public void setResponse(HttpServletResponse resp) {
+    	response.set(resp);
+    }
+
+    /** 获取response */
+    public HttpServletResponse getResponse() {
+    	HttpServletResponse resp = response.get();
+        if (resp == null) {
+            throw new SystemException("response is null");
+        }
+        return resp;
     }
 
     @Resource(name = "pageDao")

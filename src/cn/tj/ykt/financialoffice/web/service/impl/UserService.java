@@ -1,15 +1,18 @@
 package cn.tj.ykt.financialoffice.web.service.impl;
 
-import java.util.HashMap;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
+
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.tj.ykt.financialoffice.fw.entity.Role;
 import cn.tj.ykt.financialoffice.fw.entity.User;
-import cn.tj.ykt.financialoffice.web.service.JspResult;
-import cn.tj.ykt.financialoffice.web.service.JspService;
+import cn.tj.ykt.financialoffice.web.service.GridList;
+import cn.tj.ykt.financialoffice.web.service.JsonExtService;
+import cn.tj.ykt.financialoffice.web.service.JsonResult;
 
 /**
  * <pre>
@@ -18,87 +21,93 @@ import cn.tj.ykt.financialoffice.web.service.JspService;
  * 修改者：
  * </pre>
  */
+@Transactional
 @Service("userService")
-public class UserService extends JspService {
+public class UserService extends JsonExtService {
 	
-	public JspResult execute(Map<String, Object> param) {
+	@Override
+	public Object doExecute(Map<String, Object> param) {
 		Long uidl = null;
 		Long ridl = null;
-
-		Map<String, Object> ret = new HashMap<String, Object>();
-		String meth = getParam(param, "meth");
+		List<User> userlist;
+		BigInteger userCount;
+		 int start = Integer.parseInt((String) param.get("start"));
+         int limit = Integer.parseInt((String) param.get("limit"));
+         GridList<User> useli = new GridList<User>();
+		
+		int meth =  Integer.parseInt((String) getParam(param, "meth"));
 		String uid = getParam(param, "uid");
-
 		String username = getParam(param, "username");
 		String password = getParam(param, "password");
 		String realname = getParam(param, "realname");
 		String rid = getParam(param, "rid");
-
-		if (uid != null) {
+		if (uid != null &&!"".equals(uid)) {
 			uidl = Long.parseLong(uid);
 		}
-		if (rid != null) {
+		if (rid != null &&!"".equals(rid)) {
 			ridl = Long.parseLong(rid);
 		}
-
-		List<Role> role = getDao().findListByHQL("select r from Role r");
-		ret.put("role", role);
-
-		switch (StrInt(meth)) {
+		switch (meth) {
 		case 1:
-			break;
+			if("".equals(username)||username==null){
+				userlist = getDao().findPageByHql("select u from User u ", start, limit);
+				userCount = (BigInteger) getDao().findBySQL("select count(*) from sys_user");
+			}else{
+				userlist = getDao().findPageByHql("select u from User u where u.username like ?", start, limit, "%"+username+"%");
+				userCount = (BigInteger) getDao().findBySQL("select count(*) from sys_user u where u.username like ?","%"+username+"%");
+			}
+			for (int i = 0; i < userlist.size(); i++) {
+				userlist.get(i).setUrid(userlist.get(i).getRole().getRid());
+			}
+			int userCountInt = userCount.intValue();
+			useli.setData(userlist);
+			useli.setTotal(userCountInt);
+//			JSONArray jsonArray = JSONArray.fromObject(userlist);
+//			JSONObject json = new JSONObject();
+//			json.put("total", userlist.size());
+//			json.put("data", jsonArray.toString());
+			return  useli;
 		case 2:
-			
 			Role rlist = getDao().load(ridl, Role.class);
-			String auid = getParam(param, "auid");
 			if (rlist != null) {
-				User usera = null;
-				if (auid != null && !"".equals(auid)) {
-					Long auidl = Long.parseLong(auid);
-					usera = getDao().load(auidl, User.class);
-				} else {
-					usera = new User();
-				}
-				User aluser = getDao().findByHQL("select u from User where u.username=?", username);
+				User usera = new User();
+				User aluser = getDao().findByHQL("select u from User u where u.username=?", username);
 				if(aluser!=null){
-					ret.put("msg", "用户名重复！");
-					return new JspResult("systemManage/userList", ret);
+						return new JsonResult(false, "用户名重复！");
 				}
 				usera.setPassword(password);
 				usera.setRealname(realname);
 				usera.setRole(rlist);
 				usera.setUsername(username);
 				getDao().saveOrUpdate(usera);
-				
 			}
 			break;
 		case 3:
-			User usere = new User();
-
-			if (uidl != null) {
-				User luser = getDao().load(uidl, User.class);
-				usere.setUid(luser.getUid());
-				usere.setPassword(luser.getPassword());
-				usere.setRealname(luser.getRealname());
-				usere.setRole(luser.getRole());
-				usere.setUsername(luser.getUsername());
-
-				ret.put("usere", usere);
+			Role edrlist = getDao().load(ridl, Role.class);
+			if (edrlist != null) {
+				User aluser = getDao().findByHQL("select u from User  u where u.username=?", username);
+				if(aluser!=null){
+					if(!uidl.equals(aluser.getUid())){
+					return new JsonResult(false, "用户名重复！");
+				   }
+				}
+				User usera = getDao().load(uidl, User.class);
+				usera.setPassword(password);
+				usera.setRealname(realname);
+				usera.setRole(edrlist);
+				usera.setUsername(username);
+				usera.setUid(uidl);
+				getDao().update(usera);
 			}
 			break;
 		case 4:
-			if (uidl != null) {
-				User luser = getDao().load(uidl, User.class);
-				getDao().delete(luser);
-			}
+				User user = getDao().load(uidl, User.class);
+				getDao().delete(user);
 			break;
 		default:
-			ret.put("msg", "数据错误！");
-			return new JspResult("main/mainRight", ret);
+			return new JsonResult(false, "数据错误！");
 		}
-		List<User> user = getDao().findListByHQL("select su from User su");
-		ret.put("user", user);
-		return new JspResult("systemManage/userList", ret);
+		return new JsonResult(true, "保存成功！");
 
 	}
 

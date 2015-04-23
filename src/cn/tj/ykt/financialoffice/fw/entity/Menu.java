@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -27,6 +26,7 @@ public class Menu implements java.io.Serializable {
     private String mmodule;
     private String keyid;
     private String enable;
+    private String order;
     private List<Role> roles = new ArrayList<Role>();
     
     @Id
@@ -94,6 +94,15 @@ public class Menu implements java.io.Serializable {
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
+
+	@Column(name = "order")
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
    
 
 }

@@ -8,6 +8,7 @@ public class TestBase64 {
 
     @Test
     public void test001() {
-        System.out.println(Base64Util.dec(""));
+        System.out.println(Base64Util.dec("MTIzNDU2"));
+        System.out.println(Base64Util.enc("123456"));
     }
 }

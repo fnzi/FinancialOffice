@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
+import cn.tj.ykt.financialoffice.kernel.internal.handler.DefaultHandler;
 import cn.tj.ykt.financialoffice.kernel.internal.handler.Handler;
 import cn.tj.ykt.financialoffice.kernel.internal.message.MessageBroker;
 import cn.tj.ykt.financialoffice.kernel.internal.model.Plugin;
@@ -94,6 +95,9 @@ public class ProcessImpl implements Process {
                 String returnValue = handler.process(messageBroker);
                 messageBroker.setReturnValue(returnValue);
 
+                if (!DefaultHandler.SUCCESS.equals(returnValue)) {
+                    return;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

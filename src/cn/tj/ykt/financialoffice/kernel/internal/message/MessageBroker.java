@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import cn.tj.ykt.financialoffice.system.cfg.Column;
+import cn.tj.ykt.financialoffice.system.cfg.Gl_Trntm;
+import cn.tj.ykt.financialoffice.system.cfg.Header;
 
 /**
  * <pre>
@@ -18,15 +20,14 @@ public class MessageBroker {
     // -----------------------------------
     /** 报表唯一标示 */
     private String reportId;
+
+    /** 获取日报名称 */
+    private String reportName;
+
     /** 报表临时文件的路径 */
     private String tempFilePath;
     /** excel中解析的有效数据 */
     private List<List<String>> data;
-
-    /** 有效行 */
-    private Integer row;
-    /** 有效列 */
-    private Integer col;
 
     /** 表名 */
     private String tableName;
@@ -42,6 +43,47 @@ public class MessageBroker {
     private String tempFileName;
 
     private String returnValue;
+
+    // -----------------------------------
+    /**
+     * A3凭证配置信息
+     */
+    private List<Gl_Trntm> glTrntms;
+
+    // -----------------------------------
+    /**
+     * <pre>
+     * 运行时变量
+     * 标记同一批次同步的数据
+     * </pre>
+     */
+    private String batchNo;
+    /**
+     * <pre>
+     * 运行时变量
+     * 标记有效数据开始行
+     * </pre>
+     */
+    private int dataLine;
+    /**
+     * excel模板header
+     */
+    private List<Header> headers;
+
+    /** 报表下载查询参数 */
+    private Map<String, String> exportQueryParams;
+    private String downUrl;
+    private String way;
+    private String storePath;
+
+    private String username;
+    private String password;
+
+    /** excel中解析data */
+    private List<List<String>> excelInData;
+
+    /** 凭证编号 */
+    private String trNum;
 
     public String getReturnValue() {
         return returnValue;
@@ -111,22 +153,6 @@ public class MessageBroker {
         this.data = data;
     }
 
-    public Integer getRow() {
-        return row;
-    }
-
-    public void setRow(Integer row) {
-        this.row = row;
-    }
-
-    public Integer getCol() {
-        return col;
-    }
-
-    public void setCol(Integer col) {
-        this.col = col;
-    }
-
     public String getTableName() {
         return tableName;
     }
@@ -141,6 +167,110 @@ public class MessageBroker {
 
     public void setColumns(Map<String, Column> columns) {
         this.columns = columns;
+    }
+
+    public List<Gl_Trntm> getGlTrntms() {
+        return glTrntms;
+    }
+
+    public void setGlTrntms(List<Gl_Trntm> glTrntms) {
+        this.glTrntms = glTrntms;
+    }
+
+    public String getBatchNo() {
+        return batchNo;
+    }
+
+    public void setBatchNo(String batchNo) {
+        this.batchNo = batchNo;
+    }
+
+    public List<Header> getHeaders() {
+        return headers;
+    }
+
+    public void setHeaders(List<Header> headers) {
+        this.headers = headers;
+    }
+
+    public int getDataLine() {
+        return dataLine;
+    }
+
+    public void setDataLine(int dataLine) {
+        this.dataLine = dataLine;
+    }
+
+    public Map<String, String> getExportQueryParams() {
+        return exportQueryParams;
+    }
+
+    public void setExportQueryParams(Map<String, String> exportQueryParams) {
+        this.exportQueryParams = exportQueryParams;
+    }
+
+    public String getDownUrl() {
+        return downUrl;
+    }
+
+    public void setDownUrl(String downUrl) {
+        this.downUrl = downUrl;
+    }
+
+    public String getWay() {
+        return way;
+    }
+
+    public void setWay(String way) {
+        this.way = way;
+    }
+
+    public String getStorePath() {
+        return storePath;
+    }
+
+    public void setStorePath(String storePath) {
+        this.storePath = storePath;
+    }
+
+    public String getReportName() {
+        return reportName;
+    }
+
+    public void setReportName(String reportName) {
+        this.reportName = reportName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<List<String>> getExcelInData() {
+        return excelInData;
+    }
+
+    public void setExcelInData(List<List<String>> excelInData) {
+        this.excelInData = excelInData;
+    }
+
+    public String getTrNum() {
+        return trNum;
+    }
+
+    public void setTrNum(String trNum) {
+        this.trNum = trNum;
     }
 
 }

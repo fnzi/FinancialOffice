@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<simple-methods>
+	<simple-method>
+		<if-validate-method field="param5" method="isEmail">
+			<log level="info" message="param5 is a Email"></log>
+			<else>
+				<log level="info" message=" param5 is not a Email"></log>
+			</else>
+		</if-validate-method>
+
+
+	</simple-method>
+</simple-methods>

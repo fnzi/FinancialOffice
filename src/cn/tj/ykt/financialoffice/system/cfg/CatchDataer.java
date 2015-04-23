@@ -1,5 +1,8 @@
 package cn.tj.ykt.financialoffice.system.cfg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <pre>
  * 功能描述：抓取数据系配置实体描述
@@ -15,13 +18,12 @@ public class CatchDataer {
     private String authUsername;
     /** 权限密码 */
     private String authPassword;
-    /** 有效行 */
-    private String datarow;
-    /** 有效列 */
-    private String datacol;
 
     /** 文件下载路径 */
     private String downFileUrl;
+
+    /** excel模板header */
+    private List<Header> headers = new ArrayList<Header>();
 
     public String getAuthUrl() {
         return authUrl;
@@ -55,19 +57,11 @@ public class CatchDataer {
         this.downFileUrl = downFileUrl;
     }
 
-    public String getDatarow() {
-        return datarow;
+    public List<Header> getHeaders() {
+        return headers;
     }
 
-    public void setDatarow(String datarow) {
-        this.datarow = datarow;
-    }
-
-    public String getDatacol() {
-        return datacol;
-    }
-
-    public void setDatacol(String datacol) {
-        this.datacol = datacol;
+    public void setHeaders(List<Header> headers) {
+        this.headers = headers;
     }
 }

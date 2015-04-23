@@ -1,5 +1,7 @@
 package cn.tj.ykt.financialoffice.fw.util;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -65,6 +67,27 @@ public class StringUtil {
             dest = m.replaceAll("");
         }
         return dest;
+    }
+
+    /**
+     * 数组转换字符串
+     * @param word
+     * @return
+     */
+    public static String list2String(List<String> list) {
+        Iterator<String> i = list.iterator();
+        if (! i.hasNext())
+            return "";
+    
+        StringBuilder sb = new StringBuilder();
+        sb.append("");
+        for (;;) {
+            String e = i.next();
+            sb.append(e);
+            if (! i.hasNext())
+            return sb.append("").toString();
+            sb.append(", ");
+        }
     }
 
     public static void main(String[] args) {

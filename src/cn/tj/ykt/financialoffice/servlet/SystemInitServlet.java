@@ -1,13 +1,20 @@
 package cn.tj.ykt.financialoffice.servlet;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
-import cn.tj.ykt.financialoffice.fw.dao.GenericDao;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+
+import cn.tj.ykt.financialoffice.fw.dao.NativeDao;
+import cn.tj.ykt.financialoffice.fw.entity.Menu;
 import cn.tj.ykt.financialoffice.fw.helper.LogUtil;
 import cn.tj.ykt.financialoffice.fw.helper.SpringUtil;
 import cn.tj.ykt.financialoffice.system.cfg.Configuration;
@@ -29,67 +36,78 @@ public class SystemInitServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        try {	
-             LogUtil.logInfo("--------系统初始化---------");
-            
-             ConfigurationContext context = XmlContext.getContext();
-             Configurations configurations = context.getConfigurations();
-            
-             Map<String, Configuration> configs = configurations.getCfgs();
-            
-             // TODO 临时解决方案（生成sql插入数据）
-             GenericDao dao = (GenericDao) SpringUtil.getBean("genericDao");
-             
-             // 查询menu的菜单项list
-             List<Object[]> menuDate = (List<Object[]>)dao.findListBySQL("select * from sys_menu");
-             
-             //判断数据库报表菜单和configuration.xml配置报表差异，进行更新数据库
-             if(menuDate.size() != 0){ // 数据库menu项非空时，将新增配置文件新增项目插入数据库
-                 if(menuDate.size() < configs.size()){
-                	 for (String key : configs.keySet()) {
-                		 for(Object[] menu : menuDate){ 
-                    		if(!configs.get(key).getName().equals(menu[1])){
-                              String insertFunctionSql =
-                              "insert into sys_menu (mname,mlink,mmodule,keyid,enable) values (?, ?, ?, ?, ?)";
-                             
-                              String mname = configs.get(key).getName();
-                              String mlink = "/doJsp/reportViewService.action?report=" +
-                              configs.get(key).getId();
-                              String mmodule = "1";
-                              String keyid = configs.get(key).getId();
-                              String enable = configs.get(key).getEnable();
-                             
-                              // 插入menu数据
-                              dao.executeSql(insertFunctionSql, mname, mlink, mmodule, keyid,
-                              enable);
-                    		}
-                		 }
-                	 }
-                 }else{
-                	 LogUtil.logInfo("--------配置文件无新添加项目，不需更新---------");
-                 }; 
-             }else{ // 数据库menu项为空时，将全部配置文件新增项目插入数据库
-            	 for (String key : configs.keySet()) {
-                      String insertFunctionSql =
-                      "insert into sys_menu (mname,mlink,mmodule,keyid,enable) values (?, ?, ?, ?, ?)";
-                     
-                      String mname = configs.get(key).getName();
-                      String mlink = "/doJsp/reportViewService.action?report=" +
-                      configs.get(key).getId();
-                      String mmodule = "1";
-                      String keyid = configs.get(key).getId();
-                      String enable = configs.get(key).getEnable();
-                     
-                      // 插入menu数据
-                      dao.executeSql(insertFunctionSql, mname, mlink, mmodule, keyid,
-                      enable);
-            	 }
-             }
-            
-             LogUtil.logInfo("--------系统初始化完成---------");
+        NativeDao dao = (NativeDao) SpringUtil.getBean("nativeDao");
+
+        Session session = dao.getHibernateSession();
+
+        Transaction tx = session.beginTransaction();
+        try {
+            LogUtil.logInfo("--------系统初始化---------");
+
+            ConfigurationContext context = XmlContext.getContext();
+            Configurations configurations = context.getConfigurations();
+
+            Map<String, Configuration> configs = configurations.getCfgs();
+
+            // 查询menu的菜单项list
+            List<Menu> menus = (List<Menu>) session.createSQLQuery("select * from sys_menu").addEntity(Menu.class).list();
+
+            Set<String> keyIds = new HashSet<String>();
+            // 整理获取keyid
+            for (Menu m : menus) {
+                keyIds.add(m.getKeyid());
+            }
+
+            for (String key : configs.keySet()) {
+                // 如果存在更新，不存在插入
+                if (keyIds.contains(key)) {
+                    Menu m = (Menu) session.createCriteria(Menu.class).add(Restrictions.eq("keyid", key)).uniqueResult();
+                    String mname = configs.get(key).getName();
+                    m.setMname(mname);
+                    String mlink = "/doJsp/reportViewService.action?report=" + configs.get(key).getId();
+                    m.setMlink(mlink);
+                    String mmodule = "REPORT";
+                    m.setMmodule(mmodule);
+                    String keyid = configs.get(key).getId();
+                    m.setKeyid(keyid);
+                    String enable = configs.get(key).getEnable();
+                    m.setEnable(enable);
+                    String order = configs.get(key).getOrder();
+                    m.setOrder(order);
+
+                    session.update(m);
+                } else {
+                    Menu m = new Menu();
+                    String mname = configs.get(key).getName();
+                    m.setMname(mname);
+                    String mlink = "/doJsp/reportViewService.action?report=" + configs.get(key).getId();
+                    m.setMlink(mlink);
+                    String mmodule = "REPORT";
+                    m.setMmodule(mmodule);
+                    String keyid = configs.get(key).getId();
+                    m.setKeyid(keyid);
+                    String enable = configs.get(key).getEnable();
+                    m.setEnable(enable);
+                    String order = configs.get(key).getOrder();
+                    m.setOrder(order);
+
+                    session.save(m);
+                }
+            }
+
+            tx.commit();
+            LogUtil.logInfo("--------系统初始化完成---------");
         } catch (Exception e) {
+            tx.rollback();
             LogUtil.logInfo("--------系统初始化异常---------");
             LogUtil.logError("系统初始化异常：" + e.getMessage(), module, e);
+        } finally {
+            if (tx != null) {
+                tx = null;
+            }
+            if (session != null) {
+                session.close();
+            }
         }
     }
 }

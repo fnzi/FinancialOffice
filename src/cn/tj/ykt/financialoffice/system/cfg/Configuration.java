@@ -17,6 +17,10 @@ public class Configuration {
     private String description;
     // 报表名字
     private String name;
+    // 顺序
+    private String order;
+    // 系统信息
+    private BusinessSystem system;
     // view系
     private Viewer viewer;
     // 创建table系
@@ -89,4 +93,21 @@ public class Configuration {
     public void setName(String name) {
         this.name = name;
     }
+
+    public BusinessSystem getSystem() {
+        return system;
+    }
+
+    public void setSystem(BusinessSystem system) {
+        this.system = system;
+    }
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
 }

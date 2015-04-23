@@ -39,7 +39,14 @@
 	    });
 	});
 	
+	function exportForm(){
+		$("#searchForm #isExport").val(1);
+		$("#searchForm").attr("method", "post");
+		$("#searchForm").submit();
+	}
+	
 	function checkSearchForm(){
+		$("#searchForm #isExport").val(0);
 		var bool = $("#searchForm input").hasClass("datepicker");
 		if(bool){
 			var start = end = "";
@@ -80,19 +87,19 @@
 			<!-- form -->
 			<form id="searchForm" action="<%=basePath%>doJsp/reportViewService.action" method="get">
 				<input type="hidden" name="report" value="${report}" />
+				<input type="hidden" id="isExport" name="isExport" value="0" />
 				${options}
 				<!-- btn -->
 				<c:if test="${options != ''}">
 					<input type="button" value="查询" onclick="checkSearchForm();" />
 				</c:if>
-				<input type="button" value="导出" />
-				<input type="button" value="审核" />
+				<input type="button" value="导出" onclick="exportForm();" />
 			</form>
 			<!-- excel data -->
 			<div style="margin-top: 20px;">
 				<table>
-					<thead>${thead}</thead>
 					<c:if test="${pager.data != null}">
+						<thead>${thead}</thead>
 						<tbody>
 							<%
 							Page pager = (Page)request.getAttribute("pager");
@@ -104,10 +111,23 @@
 							    out.print("</tr>");
 							}
 							%>
+							${sumHtmlLimit}
 						</tbody>
 					</c:if>
 				</table>
 				<div class="page_and_btn">${pager.pageStr}</div>
+				<table>
+					<tbody>${sumHtml}</tbody>
+				</table>
+				<c:if test="${adjustHtml != ''}">
+					<table>
+						<thead>${thead}</thead>
+						<tbody>${adjustHtml}</tbody>
+					</table>
+					<table>
+						<tbody>${adjustSumHtml}</tbody>
+					</table>
+				</c:if>
 			</div>
 		</div>
 	</div>

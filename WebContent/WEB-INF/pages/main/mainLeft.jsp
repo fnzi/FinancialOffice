@@ -12,29 +12,23 @@
 </head>
 <body>
 	<table border="0">
-		<tr>
-			<td align="center"><a href="${ctx}/copysuccess.jsp" target="mainFrame">checksession_jsp</a></td>
-		</tr>
-		<tr>
-			<td align="center"><a href="${ctx}/doJsp/checkSessionService.do" target="mainFrame">checksession_service</a></td>
-		</tr>
 		<c:forEach items="${parentmenus}" var="pmenudata"
 			varStatus="pmenudatac">
 			<tr>
 				<td colspan="2" align="center">${pmenudata.mname}</td>
 			</tr>
 			<table border="0">
-				<c:set var="pmid" value="${pmenudata.mid}" />
-				<c:forEach items="${childmenus}" var="cmenudata"
-					varStatus="cmenudatac">
-					<c:if test="${cmenudata.mmodule==pmid}">
-						<tr>
-							<td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
-								href="${ctx}/doJsp/${cmenudata.mlink}?meth=list"
-								target="mainFrame">${cmenudata.mname}</a></td>
-						</tr>
-					</c:if>
-				</c:forEach>
+			<c:set var="pmid" value="${pmenudata.mid}" />
+			<c:forEach items="${childmenus}" var="cmenudata"
+				varStatus="cmenudatac">
+				<c:if test="${cmenudata.mmodule==pmid}">
+					<tr>
+						<td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+							href="${ctx}/doJsp/${cmenudata.mlink}?meth=list"
+							target="mainFrame">${cmenudata.mname}</a></td>
+					</tr>
+				</c:if>
+			</c:forEach>
 			</table>
 		</c:forEach>
 	</table>

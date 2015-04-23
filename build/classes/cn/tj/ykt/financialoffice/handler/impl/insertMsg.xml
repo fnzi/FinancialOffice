@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tj.ykt.financialoffice.handler.impl">
+	<select id="selectMaxId" resultType="java.lang.Integer">
+	    <![CDATA[
+	    select max(id) as id from gl_trntm
+	    ]]>
+	</select>
+
+	<insert id="insertMsg" parameterType="cn.tj.ykt.financialoffice.handler.impl.GlTrnVo">
+		insert into gl_trntm (
+		Id,
+		Tf_sign,
+		Tr_date,
+		Tr_type,
+		Tr_num,
+		Tr_Id,
+		Tr_ref,
+		Tr_mode,
+		Open_num,
+		Tr_bills,
+		Tr_note,
+		Tr_note_f,
+		Ac_code,
+		Ac_code_f,
+		Tr_de,
+		Tr_cr,
+		Bill_date,
+		Bill_num,
+		Sett_type,
+		Assesor,
+		Producer,
+		Tallyer,
+		Asse_sign,
+		Fc_code,
+		Fc_money,
+		Exch_rate,
+		Quantity,
+		Unit_price,
+		Tr_dept,
+		Tr_proj,
+		Tr_proj_ex,
+		Tr_custom,
+		Tr_vendor,
+		Tr_indivi,
+		Tr_unite,
+		Unite_code,
+		ocode,
+		uyear,
+		sett_dept
+		,invtype
+		,orderno
+		,empno
+		,tr_corp
+		,corp_num
+		)
+		values
+		(
+		#{id,
+		jdbcType=INTEGER},
+		#{Tf_sign, jdbcType=CHAR},
+		#{Tr_date, jdbcType=DATE},
+		#{Tr_type, jdbcType=CHAR},
+		#{Tr_num, jdbcType=CHAR},
+		#{Tr_Id,
+		jdbcType=INTEGER},
+		'',
+		#{Tr_mode, jdbcType=CHAR},
+		#{Open_num,
+		jdbcType=CHAR},
+		#{Tr_bills, jdbcType=INTEGER},
+		#{Tr_note,
+		jdbcType=CHAR},
+		'',
+		#{Ac_code, jdbcType=CHAR},
+		'',
+		#{Tr_de,
+		jdbcType=DOUBLE},
+		#{Tr_cr, jdbcType=DOUBLE},
+		#{Bill_date,
+		jdbcType=DATE},
+		#{Bill_num, jdbcType=CHAR},
+		#{Sett_type, jdbcType=CHAR},
+		#{Assesor, jdbcType=CHAR},
+		#{Producer, jdbcType=CHAR},
+		#{Tallyer,
+		jdbcType=CHAR},
+		#{Asse_sign, jdbcType=CHAR},
+		#{Fc_code, jdbcType=CHAR},
+		#{Fc_money, jdbcType=NUMERIC},
+		#{Exch_rate, jdbcType=NUMERIC},
+		#{Quantity, jdbcType=NUMERIC},
+		#{Unit_price, jdbcType=NUMERIC},
+		#{Tr_dept, jdbcType=CHAR},
+		#{Tr_proj, jdbcType=CHAR},
+		#{Tr_proj_ex,
+		jdbcType=CHAR},
+		#{Tr_custom, jdbcType=CHAR},
+		'',
+		'',
+		'',
+		'',
+		#{ocode,
+		jdbcType=CHAR},
+		#{uyear, jdbcType=CHAR},
+		''
+		,''
+		,''
+		,''
+		,''
+		,''
+		)
+	</insert>
+
+	<delete id="deleteRecoder">
+		delete from gl_trntm where tf_sign = '1'
+	</delete>
+</mapper>

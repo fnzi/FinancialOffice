@@ -10,10 +10,11 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "sys_role")
@@ -23,8 +24,9 @@ public class Role implements java.io.Serializable {
 
     private Long rid;
     private String rname;
-
+    @JsonIgnore
     private List<User> users = new ArrayList<User>();
+    @JsonIgnore
     private List<Menu> menus = new ArrayList<Menu>();
     
     @Id

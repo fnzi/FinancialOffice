@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service name="testService" engine="java" validate="true" auth="true"
+	location="cn.tj.fnzi.TestService" invoke="exec">
+	<description>test !</description>
+	<attribute name="param1" type="String" mode="IN" optional="false" />
+	<attribute name="param2" type="String" mode="IN" optional="true" />
+	<attribute name="return1" type="String" mode="IN" optional="true" />
+</service>
